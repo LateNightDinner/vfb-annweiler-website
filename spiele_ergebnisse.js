@@ -6,7 +6,8 @@ const spieleErgebnisse = [
     gegner: 'FC Viktoria Neupotz',
     ort: 'Heim',
     wettbewerb: 'Landesliga',
-    ergebnis: '0:5'
+    ergebnis: '0:5',
+    link: 'https://www.fussball.de/spiel/vfb-annweiler-fc-viktoria-neupotz/-/spiel/031CSD9H0C000000VS5489BUVUR5FS5A#!/'
   },
   {
     datum: '2026-08-23',
@@ -15,7 +16,8 @@ const spieleErgebnisse = [
     gegner: 'TSG Jockgrim II',
     ort: 'Heim',
     wettbewerb: 'B-Klasse',
-    ergebnis: '3:1'
+    ergebnis: '3:1',
+    link: 'https://www.fussball.de/spiel/sg-annweiler-wernersberg-tsg-jockgrim-ii/-/spiel/031C31H900000000VS5489BUVUR5FS5A#!/'
   },
   {
     datum: '2026-08-15',
@@ -24,7 +26,8 @@ const spieleErgebnisse = [
     gegner: 'SG Dammheim/Südwestgirls',
     ort: 'Auswärts',
     wettbewerb: 'Landesliga',
-    ergebnis: '0:1'
+    ergebnis: '0:1',
+    link: 'https://www.fussball.de/spiel/sg-dammheim-suedwestgirls-vfb-annweiler/-/spiel/031CSD9HBO000000VS5489BUVUR5FS5A#!/'
   },
   {
     datum: '2026-08-23',
@@ -33,7 +36,8 @@ const spieleErgebnisse = [
     gegner: 'FC 1922 Fischbach/JSG Wasgau',
     ort: 'Heim',
     wettbewerb: 'Kreisliga',
-    ergebnis: '0:4'
+    ergebnis: '0:4',
+    link: 'https://www.fussball.de/spiel/vfb-annweiler-fc-1922-fischbach-jsg-wasgau-i/-/spiel/031D196CP4000000VS5489BTVUS470OH#!/'
   },
   {
     datum: '2026-08-27',
@@ -42,7 +46,8 @@ const spieleErgebnisse = [
     gegner: 'JSG Lemberg/Ruppertsweiler II',
     ort: 'Auswärts',
     wettbewerb: '1. Kreisklasse',
-    ergebnis: '2:6'
+    ergebnis: '2:6',
+    link: ''
   },
   {
     datum: '2026-08-21',
@@ -51,6 +56,7 @@ const spieleErgebnisse = [
     gegner: 'ASV Lug/Hauenstein SG',
     ort: 'Auswärts',
     wettbewerb: 'Kreisliga',
-    ergebnis: '1:1'
+    ergebnis: '1:1',
+    link: 'https://www.fussball.de/spiel/asv-lug-hauenstein-sg-vfb-annweiler/-/spiel/031CTR8404000000VS5489BUVUR5FS5A#!/'
   }
 ];

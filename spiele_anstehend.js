@@ -33,7 +33,9 @@ const spieleAnstehend = [
     mannschaft: 'Frauen',
     gegner: 'FV 1946 Hanhofen',
     ort: 'Heim',
-    wettbewerb: 'Landesliga'
+    wettbewerb: 'Landesliga',
+    spielort: 'Rasenplatz, Landauer Str., 76855 Annweiler am Trifels',
+    mapsLink: 'https://www.google.com/maps/search/?api=1&query=Rasenplatz%2C+Landauer+Str.%2C+76855+Annweiler+am+Trifels'
   },
   {
     datum: '2026-09-18',
@@ -315,3 +317,16 @@ const spieleAnstehend = [
     wettbewerb: 'Kreisliga'
   }
 ];
+
+const heimSpielort = 'Rasenplatz, Landauer Str., 76855 Annweiler am Trifels';
+
+spieleAnstehend.forEach((spiel) => {
+  if (!spiel.spielort && spiel.ort === 'Heim') {
+    spiel.spielort = heimSpielort;
+  }
+
+  if (!spiel.mapsLink) {
+    const suchbegriff = spiel.spielort || `${spiel.gegner}, Fußballplatz`;
+    spiel.mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(suchbegriff)}`;
+  }
+});

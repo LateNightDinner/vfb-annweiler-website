@@ -389,7 +389,12 @@ nav {
 
 .spiele-carousel .spiel-card-main { min-width: 0; }
 .spiele-carousel .spiel-card-main h3 { font-size: 19px; }
-.spiele-carousel .spiel-card-result { align-self: flex-start; min-width: 92px; }
+.spiele-carousel .spiel-card-result-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
 
 .spiele-carousel-controls {
   display: flex;
@@ -754,6 +759,16 @@ nav {
   overflow-wrap: anywhere;
 }
 
+.spiel-card-map-link {
+  display: block;
+  margin-top: 8px;
+  color: var(--blue);
+  font-size: 12px;
+  line-height: 1.35;
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}
+
 .spiel-card-result {
   min-width: 110px;
   padding: 10px 12px;
@@ -769,6 +784,22 @@ nav {
 .spiel-card-result--final {
   color: var(--white);
   background: var(--blue);
+}
+
+.spiel-card-result strong,
+.spiel-card-link { display: block; }
+
+.spiel-card-result-area { text-align: center; }
+
+.spiel-card-link {
+  margin-top: 0;
+  color: var(--blue);
+  font-family: 'Barlow', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: underline;
+  white-space: nowrap;
 }
 
 .spiele-empty {

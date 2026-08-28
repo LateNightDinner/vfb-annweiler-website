@@ -71,6 +71,8 @@ const renderSpielPanel = (spiel, istVergangen, mitAnker = false) => {
   const heimteam = spiel.ort === 'Heim' ? spiel.verein : spiel.gegner;
   const gastteam = spiel.ort === 'Heim' ? spiel.gegner : spiel.verein;
   const anker = `spiel-${spiel.datum}-${spiel.mannschaft.toLowerCase().replaceAll(' ', '-')}`;
+  const spielort = spiel.spielort || (spiel.ort === 'Heim' ? 'Rasenplatz, Landauer Str., 76855 Annweiler am Trifels' : '');
+  const mapsLink = spiel.mapsLink || (spielort ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(spielort)}` : '');
 
   return `
     <article${mitAnker ? ` id="${escapeNewsHtml(anker)}"` : ''} class="spiel-card ${istVergangen ? 'spiel-card--past' : ''}">
@@ -79,8 +81,12 @@ const renderSpielPanel = (spiel, istVergangen, mitAnker = false) => {
         <div class="spiel-card-meta">${escapeNewsHtml(spiel.mannschaft)} <span>${escapeNewsHtml(spiel.wettbewerb)}</span></div>
         <h3><span class="spiel-team">${escapeNewsHtml(heimteam)}</span><span class="spiel-vs">gegen</span><span class="spiel-team">${escapeNewsHtml(gastteam)}</span></h3>
         <div class="spiel-card-location">${escapeNewsHtml(spiel.ort)}${istVergangen ? '' : ` &middot; ${escapeNewsHtml(spiel.uhrzeit)} Uhr`}</div>
+        ${!istVergangen && mapsLink ? `<a class="spiel-card-map-link" href="${escapeNewsHtml(mapsLink)}" target="_blank" rel="noopener">${escapeNewsHtml(spielort || 'Spielort anzeigen')} · Zum Spielort</a>` : ''}
       </div>
-      <div class="spiel-card-result ${istVergangen ? 'spiel-card-result--final' : ''}">${escapeNewsHtml(istVergangen ? spiel.ergebnis : 'Anstoß')}</div>
+      <div class="spiel-card-result-area">
+        <div class="spiel-card-result ${istVergangen ? 'spiel-card-result--final' : ''}">${escapeNewsHtml(istVergangen ? spiel.ergebnis : 'Anstoß')}</div>
+        ${istVergangen && spiel.link ? `<a class="spiel-card-link" href="${escapeNewsHtml(spiel.link)}" target="_blank" rel="noopener">Zu fußball.de</a>` : ''}
+      </div>
     </article>
   `;
 };
