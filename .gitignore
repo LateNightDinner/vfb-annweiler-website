@@ -1,0 +1,12 @@
+# VS Code workspace and local settings
+.vscode/
+
+# Betriebssystem-Dateien
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporäre Dateien und lokale Vorschauen
+*.tmp
+*.temp
+*.bak

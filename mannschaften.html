@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mannschaften — VfB Annweiler 1919 e.V.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="navigation.js" defer></script>
+<script src="footer.js" defer></script>
+<script src="spiele_anstehend.js" defer></script>
+<script src="spiele_ergebnisse.js" defer></script>
+<script src="spielplan.js" defer></script>
+</head>
+<body>
+<div id="site-nav"></div>
+
+<section class="hero page-hero"><div class="container"><div class="hero-eyebrow">VfB Annweiler 1919 e.V.</div><h1>Mannschaften</h1><p class="hero-sub">Unsere aktiven Teams und die Altherrenabteilung im Überblick.</p></div></section>
+
+<section class="section-mannschaften"><div class="container"><div class="section-label">Aktive Teams</div><h2 class="section-title">Unsere Mannschaften</h2><div class="teams-grid">
+  <div class="team-card"><div class="team-card-header"><div class="team-number">H</div><h3>1. Mannschaft</h3><div class="team-badge">Herren</div></div><div class="team-card-body"><p>SG Annweiler/Wernersberg — aktuelle Saison auf fußball.de</p><a class="team-link" href="https://www.fussball.de/mannschaft/sg-annweiler-wernersberg-vfb-1919-annweiler-suedwest/-/saison/2627/team-id/011MIFFUPO000000VTVG0001VTR8C1K7#!/" target="_blank" rel="noopener">Zu fußball.de &rarr;</a></div></div>
+  <div class="team-card"><div class="team-card-header"><div class="team-number">D</div><h3>Damen</h3><div class="team-badge">Frauen</div></div><div class="team-card-body"><p>Trainer: Udo Memmer — Spielleiter: Felix Wagner. Aktuelle Saison auf fußball.de</p><a class="team-link" href="https://www.fussball.de/mannschaft/vfb-annweiler-vfb-1919-annweiler-suedwest/-/saison/2627/team-id/01L4REII0G000000VV0AG80NVU8074QK#!/" target="_blank" rel="noopener">Zu fußball.de &rarr;</a></div></div>
+  <div class="team-card"><div class="team-card-header"><div class="team-number">AH</div><h3>Altherrenabteilung</h3><div class="team-badge">Ü32</div></div><div class="team-card-body"><p>Leiter: Emil Strassner. Für alle, die den Spaß am Fußball nicht verlieren wollen.</p></div></div>
+</div></div></section>
+
+<section class="section-spielplan" aria-labelledby="spielplan-title">
+  <div class="container">
+    <div class="section-label">Saison 2026/2027</div>
+    <h2 id="spielplan-title" class="section-title">Spiele</h2>
+    <div class="spielgruppe">
+      <h3 class="spielgruppe-title">Anstehende Spiele</h3>
+      <div id="spiele-anstehend-container" class="spiele-grid"></div>
+    </div>
+    <div class="spielgruppe spielgruppe--ergebnisse">
+      <h3 class="spielgruppe-title">Vergangene Spiele</h3>
+      <div id="spiele-ergebnisse-container" class="spiele-grid"></div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+</body>
+</html>
