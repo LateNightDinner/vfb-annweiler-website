@@ -6,7 +6,7 @@ const spieleErgebnisse = [
     gegner: 'FC Viktoria Neupotz',
     ort: 'Heim',
     wettbewerb: 'Landesliga',
-    ergebnis: '0:2'
+    ergebnis: '0:5'
   },
   {
     datum: '2026-08-23',

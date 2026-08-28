@@ -13,16 +13,19 @@ const escapeHtml = (text) => String(text)
 const renderSpiel = (spiel, istVergangen) => {
   const ergebnis = istVergangen ? spiel.ergebnis : spiel.uhrzeit || 'Anstoß folgt';
   const ortLabel = spiel.ort === 'Heim' ? 'Heimspiel' : 'Auswärtsspiel';
+  const anker = `spiel-${spiel.datum}-${spiel.mannschaft.toLowerCase().replaceAll(' ', '-')}`;
+  const heimteam = spiel.ort === 'Heim' ? spiel.verein : spiel.gegner;
+  const gastteam = spiel.ort === 'Heim' ? spiel.gegner : spiel.verein;
 
   return `
-    <article class="spiel-card ${istVergangen ? 'spiel-card--past' : ''}">
+    <article id="${escapeHtml(anker)}" class="spiel-card ${istVergangen ? 'spiel-card--past' : ''}">
       <div class="spiel-card-date">
         <span>${escapeHtml(formatSpielDatum(spiel.datum))}</span>
         <span>${escapeHtml(ortLabel)}</span>
       </div>
       <div class="spiel-card-main">
         <div class="spiel-card-meta">${escapeHtml(spiel.mannschaft)}${spiel.wettbewerb ? ` <span>${escapeHtml(spiel.wettbewerb)}</span>` : ''}</div>
-        <h3>${escapeHtml(spiel.ort === 'Heim' ? spiel.verein : spiel.gegner)} <span>gegen</span> ${escapeHtml(spiel.ort === 'Heim' ? spiel.gegner : spiel.verein)}</h3>
+        <h3><span class="spiel-team">${escapeHtml(heimteam)}</span><span class="spiel-vs">gegen</span><span class="spiel-team">${escapeHtml(gastteam)}</span></h3>
         <div class="spiel-card-location">${escapeHtml(spiel.ort)}${spiel.uhrzeit && !istVergangen ? ` &middot; ${escapeHtml(spiel.uhrzeit)} Uhr` : ''}</div>
       </div>
       <div class="spiel-card-result ${istVergangen ? 'spiel-card-result--final' : ''}">${escapeHtml(ergebnis)}</div>
@@ -40,8 +43,11 @@ const renderSpiele = (containerId, spieldaten, istVergangen, leertext) => {
     return istVergangen ? -sortierung : sortierung;
   });
 
-  container.innerHTML = sortierteSpiele.length
-    ? sortierteSpiele.map((spiel) => renderSpiel(spiel, istVergangen)).join('')
+  const limit = Number.parseInt(container.dataset.limit, 10);
+  const sichtbareSpiele = Number.isNaN(limit) ? sortierteSpiele : sortierteSpiele.slice(0, limit);
+
+  container.innerHTML = sichtbareSpiele.length
+    ? sichtbareSpiele.map((spiel) => renderSpiel(spiel, istVergangen)).join('')
     : `<p class="spiele-empty">${leertext}</p>`;
 };
 

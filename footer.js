@@ -1,32 +1,32 @@
 const sponsorLogos = [
   {
     name: 'UNION Bauzentrum / Hornbach',
-    image: 'Logos/sponsor-union.jpg',
+    image: 'bilder/sponsor-union.jpg',
     url: 'https://union-bauzentrum.com/'
   },
   {
     name: 'Emanuel Haustechnik',
-    image: 'Logos/sponsor-emanuel.jpg',
+    image: 'bilder/sponsor-emanuel.jpg',
     url: null
   },
   {
     name: 'voestalpine',
-    image: 'Logos/sponsor-voestalpine.jpg',
+    image: 'bilder/sponsor-voestalpine.jpg',
     url: 'https://www.voestalpine.com/group/de/'
   },
   {
     name: 'Brillen Lippok',
-    image: 'Logos/sponsor-brillen-lippok.jpg',
+    image: 'bilder/sponsor-brillen-lippok.jpg',
     url: 'https://www.brillen-lippok.de/'
   },
   {
     name: 'Schuh Merkel',
-    image: 'Logos/sponsor-schuh-merkel.jpg',
+    image: 'bilder/sponsor-schuh-merkel.jpg',
     url: 'https://www.schuh-merkel.de/'
   },
   {
     name: 'Fahrschule Peter Grimm',
-    image: 'Logos/sponsor-fahrschule-grimm.jpg',
+    image: 'bilder/sponsor-fahrschule-grimm.jpg',
     url: null
   }
 ];

@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="styles.css">
 <script src="navigation.js" defer></script>
 <script src="footer.js" defer></script>
+<script src="spiele_anstehend.js" defer></script>
+<script src="spiele_ergebnisse.js" defer></script>
+<script src="news.js" defer></script>
 </head>
 <body>
 <div id="site-nav"></div>
@@ -25,13 +28,23 @@
   <div class="container">
     <div class="section-label">VfB Annweiler</div>
     <h2 class="section-title">Neuigkeiten</h2>
-    <div class="news-grid">
-      <div class="news-card"><div class="news-card-label">1. Mannschaft</div><div class="news-card-body"><div class="news-card-date">Saison 2025/2026 — Saisonabschluss</div><h3>Herren siegen 2:1 gegen Kapellen/Drusweiler</h3><p>Die erste Mannschaft beendet die Runde mit einem verdienten Heimsieg und verabschiedet sich in die Sommerpause.</p></div></div>
-      <div class="news-card"><div class="news-card-label">Damen</div><div class="news-card-body"><div class="news-card-date">Saison 2025/2026 — Saisonabschluss</div><h3>Damen gewinnen Saisonfinale in Dammheim 2:1</h3><p>Ein gelungener Abschluss einer starken Saison. Die Damen starten 2026/2027 in die neue Runde.</p></div></div>
-      <div class="news-card"><div class="news-card-label">Verein</div><div class="news-card-body"><div class="news-card-date">JHV 2025</div><h3>Neuer Vorstand gewählt</h3><p>Sven Dausch bleibt 1. Vorsitzender. Dominic Gretoire übernimmt als neuer Jugendleiter.</p></div></div>
-      <div class="news-card"><div class="news-card-label">Jugend</div><div class="news-card-body"><div class="news-card-date">Saison 2026/2027</div><h3>B-Jugend startet erstmals wieder</h3><p>Nachwuchs des Jahrgangs 2009 kann jetzt schon bei der C-Jugend reinschnuppern.</p></div></div>
-      <div class="news-card"><div class="news-card-label">Jugend</div><div class="news-card-body"><div class="news-card-date">Neu</div><h3>D-Juniorinnen-Mannschaft im Aufbau</h3><p>Mädchen aller Altersgruppen sind herzlich eingeladen. Schnuppertraining ist jederzeit möglich.</p></div></div>
-    </div>
+    <div id="news-container" class="news-grid"></div>
+  </div>
+</section>
+
+<section class="section-news-games" aria-labelledby="news-games-title">
+  <div class="container">
+    <div class="section-label">Saison 2026/2027</div>
+    <h2 id="news-games-title" class="section-title">Anstehende Spiele</h2>
+    <div id="news-spiele-container" class="spiele-carousel" aria-label="Alle anstehenden Spiele"></div>
+  </div>
+</section>
+
+<section class="section-news-results" aria-labelledby="news-results-title">
+  <div class="container">
+    <div class="section-label">Saison 2026/2027</div>
+    <h2 id="news-results-title" class="section-title">Vergangene Spiele</h2>
+    <div id="news-ergebnisse-container" class="spiele-carousel" aria-label="Alle vergangenen Spiele"></div>
   </div>
 </section>
 
