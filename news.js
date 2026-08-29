@@ -27,30 +27,12 @@ const escapeNewsHtml = (text) => String(text)
   .replaceAll('"', '&quot;')
   .replaceAll("'", '&#039;');
 
-const ergebnisTitel = (spiel) => {
-  const [heimTore, gastTore] = spiel.ergebnis.split(':').map(Number);
-  const gewonnen = (spiel.ort === 'Heim' && heimTore > gastTore)
-    || (spiel.ort === 'Auswärts' && gastTore > heimTore);
-  const unentschieden = heimTore === gastTore;
-  const verb = unentschieden ? 'spielt unentschieden' : gewonnen ? 'gewinnt' : 'verliert';
-  const eigeneMannschaft = spiel.ort === 'Heim' ? spiel.verein : spiel.gegner;
-  const gegner = spiel.ort === 'Heim' ? spiel.gegner : spiel.verein;
+// erlaubt Zeilenumbrüche nach Schrägstrichen statt mitten im Wort
+const mitUmbruchNachSlash = (text) => escapeNewsHtml(text).replaceAll('/', '/<wbr>');
 
-  return `${eigeneMannschaft} ${verb} ${spiel.ergebnis} gegen ${gegner}`;
-};
-
-const ergebnisNews = spieleErgebnisse.map((spiel) => ({
-  datum: spiel.datum,
-  kategorie: spiel.mannschaft,
-  titel: ergebnisTitel(spiel),
-  text: `${spiel.wettbewerb} - ${spiel.ort === 'Heim' ? 'Heimspiel' : 'Auswärtsspiel'} am ${formatNewsDatum(spiel.datum)}.`,
-  link: `mannschaften.html#spiel-${spiel.datum}-${spiel.mannschaft.toLowerCase().replaceAll(' ', '-')}`
-}));
-
-const news = [
-  ...ergebnisNews.sort((erstes, zweites) => zweites.datum.localeCompare(erstes.datum)).slice(0, 4),
-  ...redaktionelleNews
-].sort((erstes, zweites) => zweites.datum.localeCompare(erstes.datum)).slice(0, 6);
+const news = [...redaktionelleNews]
+  .sort((erstes, zweites) => zweites.datum.localeCompare(erstes.datum))
+  .slice(0, 6);
 
 const newsContainer = document.querySelector('#news-container');
 
@@ -71,22 +53,31 @@ const renderSpielPanel = (spiel, istVergangen, mitAnker = false) => {
   const heimteam = spiel.ort === 'Heim' ? spiel.verein : spiel.gegner;
   const gastteam = spiel.ort === 'Heim' ? spiel.gegner : spiel.verein;
   const anker = `spiel-${spiel.datum}-${spiel.mannschaft.toLowerCase().replaceAll(' ', '-')}`;
-  const spielort = spiel.spielort || (spiel.ort === 'Heim' ? 'Rasenplatz, Landauer Str., 76855 Annweiler am Trifels' : '');
-  const mapsLink = spiel.mapsLink || (spielort ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(spielort)}` : '');
+  const ortLabel = spiel.ort === 'Heim' ? 'Heim' : 'Auswärts';
+  const spielort = spiel.spielort || (spiel.ort === 'Heim' ? 'Rasenplatz, Landauer Str., 76855 Annweiler am Trifels' : `${spiel.gegner}, Fußballplatz`);
+  const mapsLink = spiel.mapsLink || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(spielort)}`;
+  const datumZeit = spiel.uhrzeit ? `${formatNewsDatum(spiel.datum)} - ${spiel.uhrzeit}` : formatNewsDatum(spiel.datum);
 
   return `
     <article${mitAnker ? ` id="${escapeNewsHtml(anker)}"` : ''} class="spiel-card ${istVergangen ? 'spiel-card--past' : ''}">
-      <div class="spiel-card-date"><span>${escapeNewsHtml(formatNewsDatum(spiel.datum))}</span><span>${istVergangen ? (spiel.ort === 'Heim' ? 'Heimspiel' : 'Auswärtsspiel') : `${spiel.uhrzeit} Uhr`}</span></div>
-      <div class="spiel-card-main">
-        <div class="spiel-card-meta">${escapeNewsHtml(spiel.mannschaft)} <span>${escapeNewsHtml(spiel.wettbewerb)}</span></div>
-        <h3><span class="spiel-team">${escapeNewsHtml(heimteam)}</span><span class="spiel-vs">gegen</span><span class="spiel-team">${escapeNewsHtml(gastteam)}</span></h3>
-        <div class="spiel-card-location">${escapeNewsHtml(spiel.ort)}${istVergangen ? '' : ` &middot; ${escapeNewsHtml(spiel.uhrzeit)} Uhr`}</div>
-        ${!istVergangen && mapsLink ? `<a class="spiel-card-map-link" href="${escapeNewsHtml(mapsLink)}" target="_blank" rel="noopener">${escapeNewsHtml(spielort || 'Spielort anzeigen')} · Zum Spielort</a>` : ''}
+      <div class="spiel-card-category">
+        <span>${escapeNewsHtml(spiel.mannschaft)}</span>
+        ${spiel.wettbewerb ? `<span class="spiel-card-competition">${escapeNewsHtml(spiel.wettbewerb)}</span>` : ''}
       </div>
+      <div class="spiel-card-body">
+        <div class="spiel-card-datetime">${escapeNewsHtml(datumZeit)}</div>
+        <div class="spiel-card-teams">
+          <span class="spiel-team">${mitUmbruchNachSlash(heimteam)}</span>
+          <span class="spiel-vs">vs.</span>
+          <span class="spiel-team">${mitUmbruchNachSlash(gastteam)}</span>
+        </div>
+        <a class="spiel-card-ort-link" href="${escapeNewsHtml(mapsLink)}" target="_blank" rel="noopener">${escapeNewsHtml(ortLabel)}</a>
+      </div>
+      ${istVergangen ? `
       <div class="spiel-card-result-area">
-        <div class="spiel-card-result ${istVergangen ? 'spiel-card-result--final' : ''}">${escapeNewsHtml(istVergangen ? spiel.ergebnis : 'Anstoß')}</div>
-        ${istVergangen && spiel.link ? `<a class="spiel-card-link" href="${escapeNewsHtml(spiel.link)}" target="_blank" rel="noopener">Zu fußball.de</a>` : ''}
-      </div>
+        <div class="spiel-card-result spiel-card-result--final">${escapeNewsHtml(spiel.ergebnis)}</div>
+        ${spiel.link ? `<a class="spiel-card-link" href="${escapeNewsHtml(spiel.link)}" target="_blank" rel="noopener">Zu fußball.de</a>` : ''}
+      </div>` : ''}
     </article>
   `;
 };
@@ -113,11 +104,11 @@ const renderSpielCarousel = (containerId, spieldaten, istVergangen) => {
       </div>
     </div>
     <div class="spiele-carousel-controls">
-      <button class="carousel-button carousel-button--prev" type="button" aria-label="Vorheriges Spiel">&#8592;</button>
+      <button class="carousel-button carousel-button--prev" type="button" aria-label="Vorheriges Spiel"></button>
       <div class="carousel-dots" role="tablist" aria-label="Spiel auswählen">
         ${sortierteSpiele.map((spiel, index) => `<button class="carousel-dot${index === 0 ? ' is-active' : ''}" type="button" role="tab" aria-label="Spiel ${index + 1} von ${sortierteSpiele.length}" aria-selected="${index === 0}" data-slide="${index}"></button>`).join('')}
       </div>
-      <button class="carousel-button carousel-button--next" type="button" aria-label="Nächstes Spiel">&#8594;</button>
+      <button class="carousel-button carousel-button--next" type="button" aria-label="Nächstes Spiel"></button>
     </div>
   `;
 
