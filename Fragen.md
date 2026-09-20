@@ -1,16 +1,26 @@
 # Fragen
+- Welche mannschaften sind aktuell? https://www.fussball.de/verein/vfb-1919-annweiler-suedwest/-/id/00ES8GNB9O000007VV0AG08LVUPGND5I#!/
 - Welche Jugendabteilungen sollen auf der neuen Website angezeigt werden? 
-    - Momentan werden C-, D-, E-, F-, G-Junioren angezeigt
-- Haben wir Bilder vom Stadion? Ansonsten nehme ich das, welches ich geschossen habe.
-- Bild von Dominic Gretoire? Bilder der Jugendtrainer mit Vorstellung?
+    - Momentan werden Trainingszeiten der C-, D-, E-, F-, G-Junioren angezeigt
+
+- Trainern/Ansprechpartner
+    - Christian Ochs: Kontaktdaten?
+    - Dominic Gretoire - Jugendleiter: Bild + Kontaktdaten?
+    - Bilder der Jugendtrainer mit Vorstellung dazu?
+    - Ansprechpartner für AH? 
+    - Kontakt - Ansprechpartner: Bilder + Rolle + Kontaktdaten + weitere hinzufügen?
+
+- Mannschaftsbilder
+    - Aktive Herren
+    - Aktive AH?
+
+- Feedback der Anderen:
+    - Verbessern:
+    - Rauswerfen:
 
 
 # Offene Anfragen Copilot
 
-
-
-- Jugendabteilung: Infos für Jugenleiter anpassen:
-    - Dominic Gretoire ist wie folgt zu erreichen: jugendleiter@vfbannweiler.de, Telefonnummer: +49 15118457395
 - Verein: Bitte Namen der aktuellen Vorstandschaft hinzufügen, Bild folgt (dafür bitte platzhalter einfügen)
     - Der VfB Annweiler hat, im Rahmen der Jahreshauptversammlung die Vorstandschaft gewählt. Hier präsentieren wir die neue Vorstandschaft:
 

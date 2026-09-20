@@ -61,32 +61,78 @@
         <span>Flyer ansehen</span>
       </a>
     </div>
-    <div class="aufraeumaktion-grid">
-      <div class="vorher-nachher-card">
-        <div class="vorher-nachher-images">
-          <div class="vn-image"><span class="vn-label">Vorher</span><img src="bilder/aufraeumaktion/trikot-raum1-davor.JPG" alt="Trikotraum 1 vorher"></div>
-          <div class="vn-image"><span class="vn-label">Nachher</span><img src="bilder/aufraeumaktion/trikot-raum1-danach.JPG" alt="Trikotraum 1 nachher"></div>
+    <div class="aufraeumaktion-columns">
+      <div class="aufraeumaktion-column">
+        <h3 class="aufraeumaktion-column-title">Vorher</h3>
+        <div class="vn-carousel">
+          <div class="vn-carousel-viewport" aria-live="polite">
+            <div class="vn-carousel-track">
+              <div class="vn-carousel-slide"><img src="bilder/aufraeumaktion/trikot-raum1-davor.JPG" alt="Trikotraum 1 vorher"><span class="vn-carousel-caption">Trikotraum 1</span></div>
+              <div class="vn-carousel-slide"><img src="bilder/aufraeumaktion/trikot-raum2-davor.JPG" alt="Trikotraum 2 vorher"><span class="vn-carousel-caption">Trikotraum 2</span></div>
+              <div class="vn-carousel-slide"><img src="bilder/aufraeumaktion/trikot-raum-3-davor.JPG" alt="Trikotraum 3 vorher"><span class="vn-carousel-caption">Trikotraum 3</span></div>
+            </div>
+          </div>
+          <div class="vn-carousel-controls">
+            <button class="carousel-button carousel-button--prev" type="button" aria-label="Vorheriges Bild"></button>
+            <div class="carousel-dots" role="tablist" aria-label="Bild auswählen">
+              <button class="carousel-dot is-active" type="button" role="tab" aria-label="Bild 1 von 3" aria-selected="true" data-slide="0"></button>
+              <button class="carousel-dot" type="button" role="tab" aria-label="Bild 2 von 3" aria-selected="false" data-slide="1"></button>
+              <button class="carousel-dot" type="button" role="tab" aria-label="Bild 3 von 3" aria-selected="false" data-slide="2"></button>
+            </div>
+            <button class="carousel-button carousel-button--next" type="button" aria-label="Nächstes Bild"></button>
+          </div>
         </div>
-        <h3>Raum 1</h3>
       </div>
-      <div class="vorher-nachher-card">
-        <div class="vorher-nachher-images">
-          <div class="vn-image"><span class="vn-label">Vorher</span><img src="bilder/aufraeumaktion/trikot-raum2-davor.JPG" alt="Trikotraum 2 vorher"></div>
-          <div class="vn-image"><span class="vn-label">Nachher</span><img src="bilder/aufraeumaktion/trikot-raum2-danach.JPG" alt="Trikotraum 2 nachher"></div>
+      <div class="aufraeumaktion-column">
+        <h3 class="aufraeumaktion-column-title">Nachher</h3>
+        <div class="vn-carousel">
+          <div class="vn-carousel-viewport" aria-live="polite">
+            <div class="vn-carousel-track">
+              <div class="vn-carousel-slide"><img src="bilder/aufraeumaktion/trikot-raum1-danach.JPG" alt="Trikotraum 1 nachher"><span class="vn-carousel-caption">Trikotraum 1</span></div>
+              <div class="vn-carousel-slide"><img src="bilder/aufraeumaktion/trikot-raum2-danach.JPG" alt="Trikotraum 2 nachher"><span class="vn-carousel-caption">Trikotraum 2</span></div>
+              <div class="vn-carousel-slide"><img src="bilder/aufraeumaktion/trikot-raum3-danach.JPG" alt="Trikotraum 3 nachher"><span class="vn-carousel-caption">Trikotraum 3</span></div>
+              <div class="vn-carousel-slide"><img src="bilder/aufraeumaktion/trikot-raum4-danach.JPG" alt="Trikotraum 4 nachher"><span class="vn-carousel-caption">Trikotraum 4</span></div>
+            </div>
+          </div>
+          <div class="vn-carousel-controls">
+            <button class="carousel-button carousel-button--prev" type="button" aria-label="Vorheriges Bild"></button>
+            <div class="carousel-dots" role="tablist" aria-label="Bild auswählen">
+              <button class="carousel-dot is-active" type="button" role="tab" aria-label="Bild 1 von 4" aria-selected="true" data-slide="0"></button>
+              <button class="carousel-dot" type="button" role="tab" aria-label="Bild 2 von 4" aria-selected="false" data-slide="1"></button>
+              <button class="carousel-dot" type="button" role="tab" aria-label="Bild 3 von 4" aria-selected="false" data-slide="2"></button>
+              <button class="carousel-dot" type="button" role="tab" aria-label="Bild 4 von 4" aria-selected="false" data-slide="3"></button>
+            </div>
+            <button class="carousel-button carousel-button--next" type="button" aria-label="Nächstes Bild"></button>
+          </div>
         </div>
-        <h3>Raum 2</h3>
-      </div>
-      <div class="vorher-nachher-card">
-        <div class="vorher-nachher-images vorher-nachher-images--triple">
-          <div class="vn-image"><span class="vn-label">Vorher</span><img src="bilder/aufraeumaktion/trikot-raum-3-davor.JPG" alt="Trikotraum 3 vorher"></div>
-          <div class="vn-image"><span class="vn-label">Nachher</span><img src="bilder/aufraeumaktion/trikot-raum3-danach.JPG" alt="Trikotraum 3 nachher"></div>
-          <div class="vn-image"><span class="vn-label">Nachher</span><img src="bilder/aufraeumaktion/trikot-raum4-danach.JPG" alt="Trikotraum 3 nachher, andere Ansicht"></div>
-        </div>
-        <h3>Raum 3</h3>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  (() => {
+    document.querySelectorAll('.vn-carousel').forEach((carousel) => {
+      const track = carousel.querySelector('.vn-carousel-track');
+      const slides = [...track.children];
+      const dots = [...carousel.querySelectorAll('.carousel-dot')];
+      let activeIndex = 0;
+
+      const showSlide = (index) => {
+        activeIndex = (index + slides.length) % slides.length;
+        track.style.transform = `translateX(-${activeIndex * 100}%)`;
+        dots.forEach((dot, dotIndex) => {
+          dot.classList.toggle('is-active', dotIndex === activeIndex);
+          dot.setAttribute('aria-selected', dotIndex === activeIndex);
+        });
+      };
+
+      carousel.querySelector('.carousel-button--prev').addEventListener('click', () => showSlide(activeIndex - 1));
+      carousel.querySelector('.carousel-button--next').addEventListener('click', () => showSlide(activeIndex + 1));
+      dots.forEach((dot) => dot.addEventListener('click', () => showSlide(Number(dot.dataset.slide))));
+    });
+  })();
+</script>
 
 <div id="site-footer"></div>
 </body>

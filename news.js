@@ -9,8 +9,8 @@ const redaktionelleNews = [
   {
     datum: '2026-08-08',
     kategorie: 'Verein',
-    titel: 'Aufräumaktion Trikotraum',
-    text: 'Freiwillige Helfer haben den Trikotraum entrümpelt und neu geordnet. Die Vorher-Nachher-Bilder gibt es hier auf der Seite.',
+    titel: 'Aufräumaktion',
+    text: 'Freiwillige Helfer haben die Räumlichkeiten im Vereinsheim entrümpelt und neu geordnet. Die Vorher-Nachher-Bilder gibt es hier auf der Seite.',
     link: 'aktuelles.html#aufraeumaktion'
   },
   {

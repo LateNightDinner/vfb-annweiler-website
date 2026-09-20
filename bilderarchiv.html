@@ -13,15 +13,24 @@
 <body>
 <div id="site-nav"></div>
 <section class="hero page-hero"><div class="container"><div class="hero-eyebrow">VfB Annweiler seit 1919</div><h1>Bilder<span>archiv</span></h1><p class="hero-sub">Historische Mannschaften, besondere Momente und die Geschichte des Vereins in Bildern.</p></div></section>
-<section class="section-bilderarchiv"><div class="container"><div class="section-label">Historische Sammlung</div><h2 class="section-title">Aus dem Vereinsarchiv</h2><p class="sponsoring-intro" style="color:var(--muted);">Die Flächen sind vorbereitet und halten das Format stabil. Sobald ein Foto vorliegt, wird der Platzhalter durch eine Bilddatei ersetzt.</p><div class="bilder-grid">
-  <div class="team-photo-card"><div class="image-placeholder">1922/23<small>Sportplatz am heutigen Schwimmbad</small></div><div class="team-photo-body"><h3>Frühe Vereinsjahre</h3><p>Historisches Motiv aus der Gründungszeit.</p></div></div>
-  <div class="team-photo-card"><div class="image-placeholder">1928/29<small>Südpfalzgaumeister der B-Klasse</small></div><div class="team-photo-body"><h3>Meistermannschaft</h3><p>Ein besonderer sportlicher Meilenstein.</p></div></div>
-  <div class="team-photo-card"><div class="image-placeholder">1953/54<small>Meister der B-Klasse</small></div><div class="team-photo-body"><h3>Aufstieg und Erfolge</h3><p>Historische Mannschaft aus dem Vereinsarchiv.</p></div></div>
-  <div class="team-photo-card"><div class="image-placeholder">1960<small>Einweihung des Trifelsstadions</small></div><div class="team-photo-body"><h3>Trifelsstadion</h3><p>AH-Spiel zur Einweihung am 13. August 1960.</p></div></div>
-  <div class="team-photo-card"><div class="image-placeholder">1981<small>Meister und Pokalsieger</small></div><div class="team-photo-body"><h3>VfB-Erfolgsgeschichte</h3><p>Eine weitere prägende Mannschaft.</p></div></div>
-  <div class="team-photo-card"><div class="image-placeholder">1992<small>Meister der A-Klasse</small></div><div class="team-photo-body"><h3>Meister der A-Klasse</h3><p>Eintrag aus dem historischen Bilderarchiv.</p></div></div>
-</div></div></section>
-<section class="section-chronik"><div class="container"><div class="section-label">Erinnerungen</div><h2 class="section-title">Fotos ergänzen</h2><p class="sponsoring-intro" style="color:var(--muted);">Für jedes Bild wird später ein eigenes Foto in den Projektordner gelegt, zum Beispiel unter <strong>bilder/archiv-1922.jpg</strong>. Im jeweiligen Platzhalter wird dann die Bildfläche durch ein Bild mit demselben Format ersetzt. So bleiben Beschriftung, Kartenhöhe und mobile Ansicht erhalten.</p></div></section>
+<section class="section-bilderarchiv">
+  <div class="container">
+    <div class="section-label">Historische Sammlung</div>
+    <h2 class="section-title">Aus dem Vereinsarchiv</h2>
+    <p class="sponsoring-intro" style="color:var(--muted);">Überschrift und die abgebildeten Personen werden laufend ergänzt.</p>
+    <div class="bildarchiv-carousel">
+      <div class="bildarchiv-carousel-viewport" id="bildarchiv-carousel" aria-live="polite">
+        <div class="bildarchiv-carousel-track"></div>
+      </div>
+      <div class="bildarchiv-carousel-controls" id="bildarchiv-carousel-controls">
+        <button class="carousel-button carousel-button--prev" type="button" aria-label="Vorheriges Bild"></button>
+        <div class="carousel-dots" id="bildarchiv-carousel-dots" role="tablist" aria-label="Bild auswählen"></div>
+        <button class="carousel-button carousel-button--next" type="button" aria-label="Nächstes Bild"></button>
+      </div>
+    </div>
+  </div>
+</section>
 <div id="site-footer"></div>
+<script src="bildarchiv.js" defer></script>
 </body>
 </html>

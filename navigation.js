@@ -37,6 +37,7 @@ if (navigation) {
           <li class="nav-dropdown">
             <a href="${pages.verein}">Verein</a>
             <ul class="nav-submenu">
+              <li><a href="${pages.verein}">Über den Verein</a></li>
               <li><a href="${pages.bilderarchiv}">Bilderarchiv</a></li>
               <li><a href="${pages.mitglied}">Mitglied werden</a></li>
             </ul>
