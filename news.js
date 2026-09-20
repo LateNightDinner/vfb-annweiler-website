@@ -7,11 +7,19 @@ const redaktionelleNews = [
     link: 'steeldart.html'
   },
   {
-    datum: '2026-08-28',
-    kategorie: 'Damen',
-    titel: 'Damenmannschaft stellt sich vor',
-    text: 'Die Damen freuen sich über neue Mitspielerinnen. Training und Ansprechpartner findest du auf der Mannschaftsseite.',
-    link: 'mannschaften.html#damen-vorstellung'
+    datum: '2026-08-08',
+    kategorie: 'Verein',
+    titel: 'Aufräumaktion Trikotraum',
+    text: 'Freiwillige Helfer haben den Trikotraum entrümpelt und neu geordnet. Die Vorher-Nachher-Bilder gibt es hier auf der Seite.',
+    link: 'aktuelles.html#aufraeumaktion'
+  },
+  {
+    datum: '2026-09-20',
+    kategorie: 'Newsletter',
+    titel: 'Vereins-Newsletter',
+    text: 'Unser Newsletter erscheint einmal im Quartal mit Neuigkeiten aus dem Verein. Die aktuelle Ausgabe steht als PDF zum Download bereit.',
+    link: 'dokumente/newsletter-2026-q3.pdf',
+    download: true
   }
 ];
 
@@ -38,12 +46,13 @@ const newsContainer = document.querySelector('#news-container');
 
 if (newsContainer) {
   newsContainer.innerHTML = news.map((meldung) => `
-    <a class="news-card" href="${escapeNewsHtml(meldung.link)}">
+    <a class="news-card" href="${escapeNewsHtml(meldung.link)}"${meldung.download ? ' target="_blank" rel="noopener" download' : ''}>
       <div class="news-card-label">${escapeNewsHtml(meldung.kategorie)}</div>
       <div class="news-card-body">
         <div class="news-card-date">${escapeNewsHtml(formatNewsDatum(meldung.datum))}</div>
         <h3>${escapeNewsHtml(meldung.titel)}</h3>
         <p>${escapeNewsHtml(meldung.text)}</p>
+        ${meldung.download ? '<span class="news-card-download">PDF herunterladen &darr;</span>' : ''}
       </div>
     </a>
   `).join('');
@@ -53,13 +62,42 @@ const renderSpielPanel = (spiel, istVergangen, mitAnker = false) => {
   const heimteam = spiel.ort === 'Heim' ? spiel.verein : spiel.gegner;
   const gastteam = spiel.ort === 'Heim' ? spiel.gegner : spiel.verein;
   const anker = `spiel-${spiel.datum}-${spiel.mannschaft.toLowerCase().replaceAll(' ', '-')}`;
+  const datumZeit = spiel.uhrzeit ? `${formatNewsDatum(spiel.datum)} - ${spiel.uhrzeit}` : formatNewsDatum(spiel.datum);
+  const idAttribut = mitAnker ? ` id="${escapeNewsHtml(anker)}"` : '';
+
+  if (istVergangen) {
+    const [heimTore, gastTore] = spiel.ergebnis.split(':');
+
+    return `
+    <article${idAttribut} class="spiel-card spiel-card--past">
+      <div class="spiel-result-header">
+        <span>${escapeNewsHtml(spiel.wettbewerb || '')}</span>
+        <span>${escapeNewsHtml(spiel.mannschaft)}</span>
+        <span>${escapeNewsHtml(datumZeit)}</span>
+      </div>
+      <div class="spiel-result-teams">
+        <span class="spiel-team">${mitUmbruchNachSlash(heimteam)}</span>
+        <span class="spiel-vs">vs.</span>
+        <span class="spiel-team">${mitUmbruchNachSlash(gastteam)}</span>
+      </div>
+      <div class="spiel-result-score">
+        <span>${escapeNewsHtml(heimTore)}</span>
+        <span>:</span>
+        <span>${escapeNewsHtml(gastTore)}</span>
+      </div>
+      ${spiel.link
+        ? `<a class="spiel-result-bericht" href="${escapeNewsHtml(spiel.link)}" target="_blank" rel="noopener">Bericht auf fußball.de</a>`
+        : '<span class="spiel-result-bericht spiel-result-bericht--leer">Kein Bericht verfügbar</span>'}
+    </article>
+  `;
+  }
+
   const ortLabel = spiel.ort === 'Heim' ? 'Heim' : 'Auswärts';
   const spielort = spiel.spielort || (spiel.ort === 'Heim' ? 'Rasenplatz, Landauer Str., 76855 Annweiler am Trifels' : `${spiel.gegner}, Fußballplatz`);
   const mapsLink = spiel.mapsLink || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(spielort)}`;
-  const datumZeit = spiel.uhrzeit ? `${formatNewsDatum(spiel.datum)} - ${spiel.uhrzeit}` : formatNewsDatum(spiel.datum);
 
   return `
-    <article${mitAnker ? ` id="${escapeNewsHtml(anker)}"` : ''} class="spiel-card ${istVergangen ? 'spiel-card--past' : ''}">
+    <article${idAttribut} class="spiel-card">
       <div class="spiel-card-category">
         <span>${escapeNewsHtml(spiel.mannschaft)}</span>
         ${spiel.wettbewerb ? `<span class="spiel-card-competition">${escapeNewsHtml(spiel.wettbewerb)}</span>` : ''}
@@ -73,11 +111,6 @@ const renderSpielPanel = (spiel, istVergangen, mitAnker = false) => {
         </div>
         <a class="spiel-card-ort-link" href="${escapeNewsHtml(mapsLink)}" target="_blank" rel="noopener">${escapeNewsHtml(ortLabel)}</a>
       </div>
-      ${istVergangen ? `
-      <div class="spiel-card-result-area">
-        <div class="spiel-card-result spiel-card-result--final">${escapeNewsHtml(spiel.ergebnis)}</div>
-        ${spiel.link ? `<a class="spiel-card-link" href="${escapeNewsHtml(spiel.link)}" target="_blank" rel="noopener">Zu fußball.de</a>` : ''}
-      </div>` : ''}
     </article>
   `;
 };

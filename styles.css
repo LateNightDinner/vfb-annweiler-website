@@ -164,7 +164,6 @@ nav {
 
 /* ── HERO ── */
 .hero {
-  background: var(--blue-dark);
   padding: 80px 24px 70px;
   text-align: center;
   position: relative;
@@ -182,21 +181,41 @@ nav {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('bilder/hintergrund-trifels.jpg');
+  background-image: url('bilder/stadion-1.jpg');
   background-size: cover;
-  background-position: center;
-  opacity: 0.35;
+  background-position: center 80%;
   pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero--steeldart::before {
+  background-image: url('bilder/steeldart/steeldart-logo.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--blue-dark);
 }
 
 .hero-eyebrow {
   display: inline-block;
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
+  color: #ffffff;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
   margin-bottom: 16px;
 }
 
@@ -348,6 +367,14 @@ nav {
   line-height: 1.6;
 }
 
+.news-card-download {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 600;
+}
+
 .section-news-games {
   padding: 72px 24px;
   background: var(--off);
@@ -379,12 +406,114 @@ nav {
 
 .spiele-carousel .spiel-card-body { flex: 1; }
 
-.spiele-carousel .spiel-card-result-area {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+#news-ergebnisse-container { --carousel-visible: 1; }
+
+/* ── AUFRÄUMAKTION ── */
+.section-aufraeumaktion {
+  padding: 72px 24px;
+  background: var(--off);
 }
+
+.aufraeumaktion-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.aufraeumaktion-header > div { max-width: 640px; }
+
+.aufraeumaktion-intro {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.aufraeumaktion-flyer {
+  display: block;
+  width: 140px;
+  border: 1px solid #E0E5EF;
+  border-radius: var(--radius);
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  background: var(--white);
+  flex-shrink: 0;
+}
+
+.aufraeumaktion-flyer img {
+  display: block;
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+}
+
+.aufraeumaktion-flyer span {
+  display: block;
+  padding: 8px 10px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.aufraeumaktion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 36px;
+}
+
+.vorher-nachher-card {
+  padding: 16px;
+  background: var(--white);
+  border: 1px solid #E0E5EF;
+  border-radius: var(--radius);
+}
+
+.vorher-nachher-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.vorher-nachher-images--single { grid-template-columns: 1fr; }
+.vorher-nachher-images--triple { grid-template-columns: repeat(3, 1fr); }
+.vorher-nachher-card:has(.vorher-nachher-images--triple) { grid-column: span 2; }
+
+.vn-image { position: relative; overflow: hidden; border-radius: calc(var(--radius) - 4px); }
+
+.vn-image img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.vn-label {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 3px 9px;
+  background: var(--blue);
+  color: var(--white);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+.vorher-nachher-card h3 {
+  margin-top: 12px;
+  color: var(--blue-dark);
+  font-size: 18px;
+  font-weight: 700;
+}
+
 
 .spiele-carousel-controls {
   display: flex;
@@ -519,6 +648,45 @@ nav {
   gap: 20px;
 }
 
+.raeumlichkeiten-carousel { margin-top: 24px; }
+
+.raeumlichkeiten-intro {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.raeumlichkeiten-carousel-viewport {
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.raeumlichkeiten-carousel-track {
+  display: flex;
+  transition: transform 0.35s ease;
+}
+
+.raeumlichkeiten-carousel-slide { min-width: 100%; }
+
+.raeumlichkeiten-carousel-slide img {
+  display: block;
+  width: 100%;
+  height: 420px;
+  background: var(--off);
+  object-fit: var(--img-fit, contain);
+  object-position: var(--img-position, center);
+  transform: scale(var(--img-zoom, 1));
+}
+
+.raeumlichkeiten-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 18px;
+}
+
 .team-card {
   border-radius: var(--radius);
   overflow: hidden;
@@ -587,6 +755,69 @@ nav {
 }
 
 .team-link:hover { color: var(--accent); }
+
+/* ── HERREN VORSTELLUNG ── */
+.section-herren-vorstellung {
+  padding: 72px 24px;
+  background: var(--white);
+}
+
+.herren-vorstellung-grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.herren-vorstellung-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--blue);
+}
+
+.herren-vorstellung-image img {
+  display: block;
+  width: 100%;
+  max-height: 390px;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.herren-vorstellung-image span {
+  display: block;
+  padding: 10px 14px;
+  color: var(--white);
+  background: var(--blue);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.herren-vorstellung-content .section-label { color: var(--accent); }
+
+.herren-vorstellung-content .section-title {
+  max-width: 520px;
+  margin-bottom: 18px;
+  color: var(--blue-dark);
+}
+
+.herren-vorstellung-content > p {
+  max-width: 600px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.herren-vorstellung-contacts {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 260px;
+  gap: 24px;
+  margin-top: 28px;
+}
 
 /* ── DAMEN VORSTELLUNG ── */
 .section-damen-vorstellung {
@@ -658,7 +889,110 @@ nav {
 .damen-vorstellung-contacts span { margin: 3px 0 8px; color: rgba(255,255,255,0.55); font-size: 12px; }
 .damen-vorstellung-contacts a { color: var(--accent); font-size: 13px; overflow-wrap: anywhere; }
 
-.damen-contact img { display: block; width: 80px; height: 80px; margin-bottom: 5px; border-radius: 50%; object-fit: cover; object-position: center 40%; }
+.contact-person {
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid #E0E5EF;
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+}
+
+.contact-person strong,
+.contact-person span,
+.contact-person a { display: block; }
+
+.contact-person strong {
+  color: var(--blue-dark);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.contact-person span { margin: 2px 0 8px; color: var(--muted); font-size: 13px; }
+.contact-person a { color: var(--blue); font-size: 13px; font-weight: 600; overflow-wrap: anywhere; }
+.contact-person img { display: block; width: 80px; height: 80px; margin-bottom: 10px; border-radius: 50%; object-fit: cover; object-position: center 40%; }
+
+.damen-vorstellung-contacts .contact-person {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+.damen-vorstellung-contacts .contact-person strong { color: var(--white); font-size: 16px; }
+.damen-vorstellung-contacts .contact-person span { color: rgba(255,255,255,0.55); font-size: 12px; }
+.damen-vorstellung-contacts .contact-person a { color: var(--accent); font-size: 13px; font-weight: 400; }
+
+.herren-vorstellung-contacts .contact-person,
+.ah-vorstellung-contacts .contact-person {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+/* ── ALTHERREN VORSTELLUNG ── */
+.section-ah-vorstellung {
+  padding: 72px 24px;
+  background: var(--white);
+}
+
+.ah-vorstellung-grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.ah-vorstellung-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--blue);
+}
+
+.ah-vorstellung-image img {
+  display: block;
+  width: 100%;
+  max-height: 390px;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.ah-vorstellung-image span {
+  display: block;
+  padding: 10px 14px;
+  color: var(--white);
+  background: var(--blue);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ah-vorstellung-content .section-label { color: var(--accent); }
+
+.ah-vorstellung-content .section-title {
+  max-width: 520px;
+  margin-bottom: 18px;
+  color: var(--blue-dark);
+}
+
+.ah-vorstellung-content > p {
+  max-width: 600px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.ah-vorstellung-contacts {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 260px;
+  gap: 24px;
+  margin-top: 28px;
+}
 
 /* ── SPIELPLAN SECTION ── */
 .section-spielplan {
@@ -789,17 +1123,75 @@ nav {
 .spiel-card-result strong,
 .spiel-card-link { display: block; }
 
-.spiel-card-result-area { padding: 0 20px 20px; text-align: center; }
+.spiel-result-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  padding: 8px 20px;
+  background: var(--muted);
+  color: var(--white);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+}
 
-.spiel-card-link {
-  margin-top: 0;
-  color: var(--blue);
+.spiel-result-header span:last-child { text-align: right; }
+
+.spiel-result-teams {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 20px 6px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--blue-dark);
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+.spiel-result-teams .spiel-vs {
   font-family: 'Barlow', sans-serif;
   font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.spiel-result-score {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 20px 18px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--blue-dark);
+  text-align: center;
+}
+
+.spiel-result-score span:nth-child(2) { color: var(--muted); font-size: 20px; }
+
+.spiel-result-bericht {
+  display: block;
+  padding: 14px 20px;
+  border-top: 1px solid #E0E5EF;
+  color: var(--blue);
+  font-size: 13px;
   font-weight: 600;
-  line-height: 1.2;
+  text-align: center;
   text-decoration: underline;
-  white-space: nowrap;
+}
+
+.spiel-result-bericht--leer {
+  color: var(--muted);
+  text-decoration: none;
+  cursor: default;
 }
 
 .spiele-empty {
@@ -823,15 +1215,26 @@ nav {
   margin-bottom: 40px;
 }
 
+.jugend-intro--wide {
+  max-width: none; /* oder z. B. max-width: 900px; */
+}
+
 .jugend-intro p {
   font-size: 15px;
   color: var(--muted);
   margin-top: 12px;
 }
 
+.jugend-training-wrapper {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
 .trainings-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
 
@@ -892,6 +1295,16 @@ nav {
   font-weight: 600;
 }
 
+.jugend-contact {
+  max-width: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  box-sizing: border-box;
+}
+
 /* ── VEREIN / VORSTAND ── */
 .section-verein {
   padding: 72px 24px;
@@ -944,7 +1357,8 @@ nav {
 
 /* ── DARTS SECTION ── */
 .section-darts {
-  padding: 48px 24px;
+  padding: 72px 24px;
+  padding-bottom: 40px;
   background: var(--white);
   border-top: 1px solid #E0E5EF;
 }
@@ -977,6 +1391,11 @@ nav {
   font-size: 13px;
   color: var(--blue);
   font-weight: 500;
+}
+
+.darts-contact {
+  max-width: 360px;
+  margin-top: 32px;
 }
 
 /* ── SPONSORING ── */
@@ -1516,13 +1935,23 @@ footer {
 .footer-links a:hover { color: var(--accent); }
 
 /* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .jugend-training-wrapper { grid-template-columns: 1fr; }
+  .jugend-contact { height: auto; }
+}
+
 @media (max-width: 720px) {
+  .trainings-grid { grid-template-columns: 1fr; }
   .spiele-carousel { --carousel-visible: 1; }
   .nav-links { display: none; }
   .verein-grid { grid-template-columns: 1fr; }
   .vorstand-grid { grid-template-columns: 1fr; }
   .damen-vorstellung-grid { grid-template-columns: 1fr; gap: 32px; }
   .damen-vorstellung-contacts { grid-template-columns: 1fr; gap: 16px; }
+  .herren-vorstellung-grid { grid-template-columns: 1fr; gap: 32px; }
+  .herren-vorstellung-contacts { grid-template-columns: 1fr; gap: 16px; max-width: none; }
+  .ah-vorstellung-grid { grid-template-columns: 1fr; gap: 32px; }
+  .ah-vorstellung-contacts { grid-template-columns: 1fr; gap: 16px; max-width: none; }
   .sponsor-layout { grid-template-columns: 1fr; gap: 32px; }
   .sponsor-list { grid-template-columns: 1fr; }
   .sponsor-logo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

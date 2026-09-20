@@ -13,7 +13,7 @@
 <body>
 <div id="site-nav"></div>
 
-<section class="hero page-hero">
+<section class="hero page-hero hero--steeldart">
   <div class="container">
     <div class="hero-eyebrow">Neu beim VfB Annweiler</div>
     <h1>Trifels Steeldart Club</h1>
@@ -66,8 +66,55 @@
         <div class="team-card-body"><p>Der Club nimmt auch am Ligabetrieb teil. Gemeinsam spielen, anfeuern und den VfB vertreten.</p></div>
       </div>
     </div>
+    <div class="section-label" style="margin-top:48px;">Räumlichkeiten</div>
+    <p class="raeumlichkeiten-intro">Der Raum befindet sich noch im Aufbau, der Fortschritt ist aber schon gut zu sehen.</p>
+    <div class="raeumlichkeiten-carousel">
+      <div class="raeumlichkeiten-carousel-viewport" id="raeumlichkeiten-carousel" aria-live="polite">
+        <div class="raeumlichkeiten-carousel-track">
+          <div class="raeumlichkeiten-carousel-slide"><img src="bilder/steeldart/steel-dart-raum1.jpg" alt="Trainingsraum des Trifels Darts Club, Ansicht 1"></div>
+          <!-- Beispiel Zoom/Position anpassen: style="--img-zoom:1.2; --img-position:30% 60%;" -->
+          <div class="raeumlichkeiten-carousel-slide"><img src="bilder/steeldart/steel-dart-raum2.jpg" alt="Trainingsraum des Trifels Darts Club, Ansicht 2"></div>
+          <div class="raeumlichkeiten-carousel-slide"><img src="bilder/steeldart/steel-dart-raum3.jpg" alt="Trainingsraum des Trifels Darts Club, Ansicht 3"></div>
+          <div class="raeumlichkeiten-carousel-slide"><img src="bilder/steeldart/steel-dart-raum4.jpg" alt="Trainingsraum des Trifels Darts Club, Ansicht 4"></div>
+        </div>
+      </div>
+      <div class="raeumlichkeiten-carousel-controls">
+        <button class="carousel-button carousel-button--prev" type="button" aria-label="Vorheriges Bild"></button>
+        <div class="carousel-dots" role="tablist" aria-label="Bild auswählen">
+          <button class="carousel-dot is-active" type="button" role="tab" aria-label="Bild 1 von 4" aria-selected="true" data-slide="0"></button>
+          <button class="carousel-dot" type="button" role="tab" aria-label="Bild 2 von 4" aria-selected="false" data-slide="1"></button>
+          <button class="carousel-dot" type="button" role="tab" aria-label="Bild 3 von 4" aria-selected="false" data-slide="2"></button>
+          <button class="carousel-dot" type="button" role="tab" aria-label="Bild 4 von 4" aria-selected="false" data-slide="3"></button>
+        </div>
+        <button class="carousel-button carousel-button--next" type="button" aria-label="Nächstes Bild"></button>
+      </div>
+    </div>
   </div>
 </section>
+
+<script>
+  (() => {
+    const viewport = document.querySelector('#raeumlichkeiten-carousel');
+    if (!viewport) return;
+    const track = viewport.querySelector('.raeumlichkeiten-carousel-track');
+    const slides = [...track.children];
+    const dots = [...document.querySelectorAll('.raeumlichkeiten-carousel-controls .carousel-dot')];
+    let activeIndex = 0;
+
+    const showSlide = (index) => {
+      activeIndex = (index + slides.length) % slides.length;
+      track.style.transform = `translateX(-${activeIndex * 100}%)`;
+      dots.forEach((dot, dotIndex) => {
+        dot.classList.toggle('is-active', dotIndex === activeIndex);
+        dot.setAttribute('aria-selected', dotIndex === activeIndex);
+      });
+    };
+
+    document.querySelector('.raeumlichkeiten-carousel-controls .carousel-button--prev').addEventListener('click', () => showSlide(activeIndex - 1));
+    document.querySelector('.raeumlichkeiten-carousel-controls .carousel-button--next').addEventListener('click', () => showSlide(activeIndex + 1));
+    dots.forEach((dot) => dot.addEventListener('click', () => showSlide(Number(dot.dataset.slide))));
+  })();
+</script>
 
 <div id="site-footer"></div>
 </body>
