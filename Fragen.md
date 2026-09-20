@@ -14,6 +14,8 @@
     - Aktive Herren
     - Aktive AH?
 
+- Impressum Angaben prüfen
+
 - Feedback der Anderen:
     - Verbessern:
     - Rauswerfen:

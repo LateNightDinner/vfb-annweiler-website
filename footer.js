@@ -50,8 +50,8 @@ if (footer) {
       <div class="footer-inner">
         <div>VfB Annweiler 1919 e.V. &mdash; Annweiler am Trifels</div>
         <ul class="footer-links">
-          <li><a href="https://www.vfbannweiler.de/impressum/">Impressum</a></li>
-          <li><a href="https://www.vfbannweiler.de/datenschutz/">Datenschutz</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
           <li><a href="mitglied-werden.html">Mitglied werden</a></li>
         </ul>
       </div>
