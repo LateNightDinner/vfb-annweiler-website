@@ -22,10 +22,14 @@ if (navigation) {
           <img src="bilder/logo-vfb-annweiler.png" alt="VfB Annweiler Logo">
           VfB <span>Annweiler</span> 1919
         </a>
-        <ul class="nav-links">
+        <button class="nav-burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links-menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links-menu">
           <li><a href="${pages.aktuelles}">Aktuelles</a></li>
           <li class="nav-dropdown">
             <a href="${pages.mannschaften}">Mannschaften</a>
+            <button class="nav-dropdown-toggle" type="button" aria-label="Untermenü Mannschaften öffnen" aria-expanded="false"></button>
             <ul class="nav-submenu">
               <li><a href="${pages.mannschaften}#herren-vorstellung">Herren</a></li>
               <li><a href="${pages.mannschaften}#damen-vorstellung">Damen</a></li>
@@ -36,6 +40,7 @@ if (navigation) {
           <li><a href="${pages.jugend}">Jugend</a></li>
           <li class="nav-dropdown">
             <a href="${pages.verein}">Verein</a>
+            <button class="nav-dropdown-toggle" type="button" aria-label="Untermenü Verein öffnen" aria-expanded="false"></button>
             <ul class="nav-submenu">
               <li><a href="${pages.verein}">Über den Verein</a></li>
               <li><a href="${pages.bilderarchiv}">Bilderarchiv</a></li>
@@ -48,6 +53,50 @@ if (navigation) {
       </div>
     </nav>
   `;
+
+  const burger = navigation.querySelector('.nav-burger');
+  const navLinks = navigation.querySelector('.nav-links');
+
+  const closeMenu = () => {
+    navLinks.classList.remove('is-open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Menü öffnen');
+  };
+
+  burger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('is-open');
+    burger.setAttribute('aria-expanded', String(isOpen));
+    burger.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+  });
+
+  const isMobile = () => window.matchMedia('(max-width: 720px)').matches;
+
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (isMobile() && link.closest('.nav-dropdown') && link.parentElement === link.closest('.nav-dropdown')) return;
+      closeMenu();
+    });
+  });
+
+  const toggleDropdown = (dropdown, toggle) => {
+    const isExpanded = dropdown.classList.toggle('is-expanded');
+    toggle.setAttribute('aria-expanded', String(isExpanded));
+  };
+
+  navLinks.querySelectorAll('.nav-dropdown-toggle').forEach((toggle) => {
+    toggle.addEventListener('click', () => toggleDropdown(toggle.closest('.nav-dropdown'), toggle));
+  });
+
+  navLinks.querySelectorAll('.nav-dropdown').forEach((dropdown) => {
+    const parentLink = dropdown.querySelector(':scope > a');
+    const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+    parentLink.addEventListener('click', (event) => {
+      if (isMobile()) {
+        event.preventDefault();
+        toggleDropdown(dropdown, toggle);
+      }
+    });
+  });
 
   navigation.querySelectorAll('a').forEach((link) => {
     const href = link.getAttribute('href');

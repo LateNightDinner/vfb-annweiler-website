@@ -206,6 +206,57 @@ nav {
   text-underline-offset: 5px;
 }
 
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.nav-burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.nav-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.nav-dropdown-toggle {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.nav-dropdown-toggle::after {
+  content: '▾';
+  color: var(--accent);
+  font-size: 14px;
+  transition: transform 0.15s;
+}
+
+.nav-dropdown-toggle[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+  display: inline-block;
+}
+
 /* ── HERO ── */
 .hero {
   padding: 80px 24px 70px;
@@ -2052,7 +2103,40 @@ footer {
 @media (max-width: 720px) {
   .trainings-grid { grid-template-columns: 1fr; }
   .spiele-carousel { --carousel-visible: 1; }
-  .nav-links { display: none; }
+  .nav-burger { display: flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    background: var(--blue-dark);
+    padding: 8px 24px 20px;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .nav-links.is-open { display: flex; }
+  .nav-links a { padding: 12px 4px; }
+  .nav-dropdown { position: relative; }
+  .nav-dropdown > a { padding-right: 44px; }
+  .nav-dropdown > a::after { content: none; }
+  .nav-dropdown-toggle { display: block; }
+  .nav-submenu {
+    display: none;
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    background: transparent;
+    border: 0;
+    padding: 0 0 8px 16px;
+  }
+  .nav-dropdown.is-expanded .nav-submenu { display: block; }
+  .nav-submenu a { color: rgba(255,255,255,0.65); padding: 8px 4px; }
+  .nav-submenu a:hover { background: transparent; color: var(--accent); }
   .verein-grid { grid-template-columns: 1fr; }
   .vorstand-grid { grid-template-columns: 1fr; }
   .damen-vorstellung-grid { grid-template-columns: 1fr; gap: 32px; }
