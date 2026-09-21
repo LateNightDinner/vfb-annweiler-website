@@ -10,6 +10,8 @@
     - Ansprechpartner für AH? 
     - Kontakt - Ansprechpartner: Bilder + Rolle + Kontaktdaten + weitere hinzufügen?
 
+- Trainingszeiten bei Aktive dazupacken?
+
 - Mannschaftsbilder
     - Aktive Herren
     - Aktive AH?
