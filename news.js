@@ -17,8 +17,8 @@ const redaktionelleNews = [
     datum: '2026-09-20',
     kategorie: 'Newsletter',
     titel: 'Vereins-Newsletter',
-    text: 'Unser Newsletter erscheint einmal im Quartal mit Neuigkeiten aus dem Verein. Die aktuelle Ausgabe steht als PDF zum Download bereit.',
-    link: 'dokumente/newsletter-2026-q3.pdf',
+    text: 'Unser Newsletter erscheint einmal im Quartal mit Neuigkeiten aus dem Verein. Die aktuelle Ausgabesteht als PDF zum Download bereit.',
+    link: 'dokumente/vfb-newsletter-202605.pdf',
     download: true
   }
 ];
