@@ -33,7 +33,8 @@ if (navigation) {
             <ul class="nav-submenu">
               <li><a href="${pages.mannschaften}#herren-vorstellung">Herren</a></li>
               <li><a href="${pages.mannschaften}#damen-vorstellung">Damen</a></li>
-              <li><a href="${pages.mannschaften}#ah-vorstellung">Altherren</a></li>
+              <!-- Altherren vorerst auskommentiert, da keine aktuellen Informationen vorliegen -->
+              <li><!--<a href="${pages.mannschaften}#ah-vorstellung">Altherren</a>--></li>
             </ul>
           </li>
           <li><a href="${pages.steeldart}">Steeldart</a></li>
