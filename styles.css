@@ -917,26 +917,30 @@ nav {
 .team-link:hover { color: var(--accent); }
 
 /* ── HERREN VORSTELLUNG ── */
-.section-herren-vorstellung {
+.section-profile {
   padding: 72px 24px;
   background: var(--white);
 }
 
-.herren-vorstellung-grid {
+.section-profile--dark {
+  background: var(--blue-dark);
+}
+
+.profile-grid {
   display: grid;
   grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
   gap: 48px;
   align-items: center;
 }
 
-.herren-vorstellung-image {
+.profile-image {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius);
   background: var(--blue);
 }
 
-.herren-vorstellung-image img {
+.profile-image img {
   display: block;
   width: 100%;
   max-height: 390px;
@@ -944,7 +948,7 @@ nav {
   object-position: center 25%;
 }
 
-.herren-vorstellung-image span {
+.profile-image span {
   display: block;
   padding: 10px 14px;
   color: var(--white);
@@ -956,22 +960,26 @@ nav {
   text-transform: uppercase;
 }
 
-.herren-vorstellung-content .section-label { color: var(--accent); }
+.profile-content .section-label { color: var(--accent); }
 
-.herren-vorstellung-content .section-title {
+.profile-content .section-title {
   max-width: 520px;
   margin-bottom: 18px;
   color: var(--blue-dark);
 }
 
-.herren-vorstellung-content > p {
+.section-profile--dark .profile-content .section-title { color: var(--white); }
+
+.profile-content > p {
   max-width: 600px;
   color: var(--muted);
   font-size: 15px;
   line-height: 1.75;
 }
 
-.herren-vorstellung-contacts {
+.section-profile--dark .profile-content > p { color: rgba(255,255,255,0.72); }
+
+.profile-contacts {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   max-width: 260px;
@@ -979,75 +987,14 @@ nav {
   margin-top: 28px;
 }
 
-/* ── DAMEN VORSTELLUNG ── */
-.section-damen-vorstellung {
-  padding: 72px 24px;
-  background: var(--blue-dark);
-}
-
-.damen-vorstellung-grid {
-  display: grid;
-  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
-  gap: 48px;
-  align-items: center;
-}
-
-.damen-vorstellung-image {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--radius);
-  background: var(--blue);
-}
-
-.damen-vorstellung-image img {
-  display: block;
-  width: 100%;
-  max-height: 390px;
-  object-fit: cover;
-  object-position: center 25%;
-}
-
-.damen-vorstellung-image span {
-  display: block;
-  padding: 10px 14px;
-  color: var(--white);
-  background: var(--blue);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.damen-vorstellung-content .section-label { color: var(--accent); }
-
-.damen-vorstellung-content .section-title {
-  max-width: 520px;
-  margin-bottom: 18px;
-  color: var(--white);
-}
-
-.damen-vorstellung-content > p {
-  max-width: 600px;
-  color: rgba(255,255,255,0.72);
-  font-size: 15px;
-  line-height: 1.75;
-}
-
-.damen-vorstellung-contacts {
-  display: grid;
+.profile-contacts--multi {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 28px;
+  max-width: none;
 }
 
-.damen-vorstellung-contacts strong,
-.damen-vorstellung-contacts span,
-.damen-vorstellung-contacts a { display: block; }
-
-.damen-vorstellung-contacts strong { color: var(--white); font-size: 16px; }
-.damen-vorstellung-contacts span { margin: 3px 0 8px; color: rgba(255,255,255,0.55); font-size: 12px; }
-.damen-vorstellung-contacts a { color: var(--accent); font-size: 13px; overflow-wrap: anywhere; }
+.section-profile--dark .profile-contacts strong { color: var(--white); font-size: 16px; }
+.section-profile--dark .profile-contacts span { margin: 3px 0 8px; color: rgba(255,255,255,0.55); font-size: 12px; }
+.section-profile--dark .profile-contacts a { color: var(--accent); font-size: 13px; overflow-wrap: anywhere; }
 
 .contact-person {
   padding: 20px;
@@ -1072,86 +1019,11 @@ nav {
 .contact-person a { color: var(--blue); font-size: 13px; font-weight: 600; overflow-wrap: anywhere; }
 .contact-person img { display: block; width: 80px; height: 80px; margin-bottom: 10px; border-radius: 50%; object-fit: cover; object-position: center 40%; }
 
-.damen-vorstellung-contacts .contact-person {
+.profile-contacts .contact-person {
   padding: 0;
   background: transparent;
   border: 0;
   border-radius: 0;
-}
-
-.damen-vorstellung-contacts .contact-person strong { color: var(--white); font-size: 16px; }
-.damen-vorstellung-contacts .contact-person span { color: rgba(255,255,255,0.55); font-size: 12px; }
-.damen-vorstellung-contacts .contact-person a { color: var(--accent); font-size: 13px; font-weight: 400; }
-
-.herren-vorstellung-contacts .contact-person,
-.ah-vorstellung-contacts .contact-person {
-  padding: 0;
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-}
-
-/* ── ALTHERREN VORSTELLUNG ── */
-.section-ah-vorstellung {
-  padding: 72px 24px;
-  background: var(--white);
-}
-
-.ah-vorstellung-grid {
-  display: grid;
-  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
-  gap: 48px;
-  align-items: center;
-}
-
-.ah-vorstellung-image {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--radius);
-  background: var(--blue);
-}
-
-.ah-vorstellung-image img {
-  display: block;
-  width: 100%;
-  max-height: 390px;
-  object-fit: cover;
-  object-position: center 25%;
-}
-
-.ah-vorstellung-image span {
-  display: block;
-  padding: 10px 14px;
-  color: var(--white);
-  background: var(--blue);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.ah-vorstellung-content .section-label { color: var(--accent); }
-
-.ah-vorstellung-content .section-title {
-  max-width: 520px;
-  margin-bottom: 18px;
-  color: var(--blue-dark);
-}
-
-.ah-vorstellung-content > p {
-  max-width: 600px;
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.75;
-}
-
-.ah-vorstellung-contacts {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  max-width: 260px;
-  gap: 24px;
-  margin-top: 28px;
 }
 
 /* ── SPIELPLAN SECTION ── */
@@ -1486,20 +1358,20 @@ nav {
   margin-bottom: 14px;
 }
 
-.vorstand-grid {
+.info-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 
-.vorstand-item {
+.info-item {
   background: var(--white);
   border: 1px solid #E0E5EF;
   border-radius: var(--radius);
   padding: 14px 16px;
 }
 
-.vorstand-item .role {
+.info-item .role {
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -1508,7 +1380,7 @@ nav {
   margin-bottom: 4px;
 }
 
-.vorstand-item .name {
+.info-item .name {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -2138,13 +2010,9 @@ footer {
   .nav-submenu a { color: rgba(255,255,255,0.65); padding: 8px 4px; }
   .nav-submenu a:hover { background: transparent; color: var(--accent); }
   .verein-grid { grid-template-columns: 1fr; }
-  .vorstand-grid { grid-template-columns: 1fr; }
-  .damen-vorstellung-grid { grid-template-columns: 1fr; gap: 32px; }
-  .damen-vorstellung-contacts { grid-template-columns: 1fr; gap: 16px; }
-  .herren-vorstellung-grid { grid-template-columns: 1fr; gap: 32px; }
-  .herren-vorstellung-contacts { grid-template-columns: 1fr; gap: 16px; max-width: none; }
-  .ah-vorstellung-grid { grid-template-columns: 1fr; gap: 32px; }
-  .ah-vorstellung-contacts { grid-template-columns: 1fr; gap: 16px; max-width: none; }
+  .info-grid { grid-template-columns: 1fr; }
+  .profile-grid { grid-template-columns: 1fr; gap: 32px; }
+  .profile-contacts { grid-template-columns: 1fr; gap: 16px; max-width: none; }
   .sponsor-layout { grid-template-columns: 1fr; gap: 32px; }
   .sponsor-list { grid-template-columns: 1fr; }
   .sponsor-logo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
