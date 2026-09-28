@@ -7,7 +7,7 @@ const sponsorLogos = [
   {
     name: 'Emanuel Haustechnik',
     image: 'bilder/sponsoren/sponsor-emanuel.jpg',
-    url: null
+    url: 'https://www.emanuel-haustechnik.de/'
   },
   {
     name: 'voestalpine',
@@ -27,7 +27,7 @@ const sponsorLogos = [
   {
     name: 'Fahrschule Peter Grimm',
     image: 'bilder/sponsoren/sponsor-fahrschule-grimm.jpg',
-    url: null
+    url: 'https://fahrschule-grimm.com/'
   }
 ];
 
