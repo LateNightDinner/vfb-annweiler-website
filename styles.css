@@ -1271,6 +1271,8 @@ nav {
 }
 
 .training-card {
+  display: flex;
+  flex-direction: column;
   background: var(--white);
   border: 1px solid #E0E5EF;
   border-radius: var(--radius);
@@ -1298,6 +1300,11 @@ nav {
   font-size: 13px;
   color: var(--text);
   line-height: 1.7;
+}
+
+.training-card .team-link {
+  margin-top: auto;
+  padding-top: 12px;
 }
 
 .jugend-cta {

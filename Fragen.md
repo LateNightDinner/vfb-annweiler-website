@@ -4,11 +4,8 @@
     - Momentan werden Trainingszeiten der C-, D-, E-, Junioren angezeigt
 
 - Trainern/Ansprechpartner
-    - Christian Ochs: Kontaktdaten? Steven Göttge (Häkel kümmert sich )
     - Dominic Gretoire - Jugendleiter: Bild + Kontaktdaten? -> (Jugendtrainer ein Bild) 
     - Bilder der Jugendtrainer mit Vorstellung dazu?
-    - Ansprechpartner für AH? -> Weglassen ?
-    - Kontakt - Ansprechpartner: Bilder + Rolle + Kontaktdaten + weitere hinzufügen?
 
 - Trainingszeiten bei Aktive dazupacken? -> JA -> Di + Do 19 uhr Herren , Mo - Mi 19Uhr Damen, Darts Mo Do 18 Uhr ohne ende
 
