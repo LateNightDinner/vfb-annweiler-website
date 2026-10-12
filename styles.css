@@ -1359,6 +1359,11 @@ nav {
   box-sizing: border-box;
 }
 
+.section-darts .jugend-contact {
+  justify-content: flex-start;
+  padding-top: 24px;
+}
+
 /* ── VEREIN / VORSTAND ── */
 .section-verein {
   padding: 72px 24px;
@@ -1433,6 +1438,71 @@ nav {
 
 .training-times--tile {
   grid-column: 1 / -1;
+}
+
+/* ── STEELDART TRAININGSZEITEN ── */
+.training-times--darts {
+  max-width: 460px;
+  padding: 16px 18px;
+  background: #F4F6FB;
+  border: 1px solid #E0E5EF;
+  border-left: 3px solid var(--accent);
+}
+
+.darts-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.darts-side .training-times--darts {
+  margin-top: auto;
+}
+
+.training-times--darts .role {
+  margin-bottom: 12px;
+}
+
+.darts-days {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.darts-day {
+  padding: 10px 14px;
+  background: var(--white);
+  border: 1px solid #E0E5EF;
+  border-radius: var(--radius);
+}
+
+.darts-day-name {
+  display: block;
+  color: var(--blue-dark);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.darts-day-time {
+  display: block;
+  margin-top: 2px;
+  color: var(--blue);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.darts-note {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .darts-days { grid-template-columns: 1fr; }
 }
 
 .training-times .role {
