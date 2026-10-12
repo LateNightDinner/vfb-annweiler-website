@@ -1387,7 +1387,8 @@ nav {
 }
 
 .info-grid--compact {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  align-items: stretch;
 }
 
 .info-grid--compact .info-item {
@@ -1418,7 +1419,7 @@ nav {
   background: #F4F6FB;
   border: 1px solid #E0E5EF;
   border-radius: var(--radius);
-  padding: 14px 16px;
+  padding: 14px 16px 14px 14px;
 }
 
 .section-profile--dark .training-times {
@@ -1431,7 +1432,7 @@ nav {
 .section-profile--dark .training-times-row .training-slot { color: var(--accent); }
 
 .training-times--tile {
-  grid-column: span 2;
+  grid-column: 1 / -1;
 }
 
 .training-times .role {

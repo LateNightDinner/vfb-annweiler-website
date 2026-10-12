@@ -1,7 +1,3 @@
-# Vorschläge
-- Neuigkeiten: Hauptsächlich maximal 3 Kacheln mit aktuellesten Dingen
-- 
-
 # Fragen
 
 ## Mannschaften
@@ -35,3 +31,5 @@
 # Offene To-Do's
 - Impressum Angaben prüfen
 
+# Vorschläge
+- Neuigkeiten: Hauptsächlich maximal 3 Kacheln mit aktuellesten Dingen
