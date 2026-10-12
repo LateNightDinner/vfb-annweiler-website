@@ -1,10 +1,10 @@
-# Fragen
+# Fragen & Anliegen
 
 ## Mannschaften
 
 ### Herren
 - Mannschaftsbild fehlt noch
-- Steven Göttgke fehlt Kontakmöglichkeit
+- Steven Göttgke fehlt Kontakmöglichkeit (Häkel mir schicken?)
 
 ### Herren Ü32
 - Wer ist Ansprechpartner + Kontaktmöglichkeiten?
@@ -25,8 +25,8 @@
 
 ## Jugend
 - Trainer/Ansprechpartner
-    - Dominic Gretoire - Jugendleiter: Bild + Kontaktdaten? -> (Pro Jugendtrainer ein Bild) 
-    - Bilder der Jugendtrainer mit Vorstellung dazu?
+    - Dominic Gretoire - Jugendleiter: Bild + Kontaktdaten? 
+    - Bilder der Jugendtrainer mit Vorstellung dazu? Vorerst ansonsten nur die Namen mit Fuktion auflisten.
 
 # Offene To-Do's
 - Impressum Angaben prüfen
