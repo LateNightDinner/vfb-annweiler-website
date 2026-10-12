@@ -45,20 +45,18 @@
 - Fehlt beim folgenden Block was?
 - ![alt text](image-1.png)
 
-## Sponsoring
+### Sponsoring
 - Ansprechpartner ist noch René?
 
-## Kontakt
+### Kontakt
 - Bei allen eine Kontaktmöglichkeit hinterlegen?
 - ![alt text](image-2.png)
 
-# Offene To-Do's
+### Impressum folgende Angaben prüfen:
+- Wer prüft das Impressum? Rechtlich gesehen.
 
-## Impressum folgende Angaben prüfen:
-- 
-
-## DSGVO prüfen?
+### DSGVO prüfen?
 - René fragen oder wer ist sonst Beauftragter?
 
-# Vorschläge
+## Vorschläge
 - Neuigkeiten: Hauptsächlich maximal 3 Kacheln mit aktuellesten Dingen
