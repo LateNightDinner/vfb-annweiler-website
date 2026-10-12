@@ -25,8 +25,11 @@
 
 ## Jugend
 - Trainer/Ansprechpartner
-    - Dominic Gretoire - Jugendleiter: Bild + Kontaktdaten? 
+    - Dominic Gretoire - Jugendleiter: Bild + Kontaktdaten okay? 
     - Bilder der Jugendtrainer mit Vorstellung dazu? Vorerst ansonsten nur die Namen mit Fuktion auflisten.
+- Ansicht auch mit B-Jugend okay?
+![alt text](image.png)
+- 
 
 # Offene To-Do's
 - Impressum Angaben prüfen
