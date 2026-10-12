@@ -21,18 +21,44 @@
 
 ## Steeldart
 - Felix fehlt Bild & Kontaktmöglichkeit
-- Wünsche, was noch hinzugefügt werden soll
+- Wünsche, was noch hinzugefügt werden soll?
 
 ## Jugend
 - Trainer/Ansprechpartner
     - Dominic Gretoire - Jugendleiter: Bild + Kontaktdaten okay? 
-    - Bilder der Jugendtrainer mit Vorstellung dazu? Vorerst ansonsten nur die Namen mit Fuktion auflisten.
-- Ansicht auch mit B-Jugend okay?
+    - Bilder der Jugendtrainer mit Vorstellung dazu? Vorerst ansonsten nur die Namen mit Funktion auflisten
+        - Wer trainiert?
+            - C-Jugend:
+            - C-Jugend II:
+            - D-Jugend:
+            - D-Jugend II:
+            - E-Jugend:
+- Ansicht auch mit B-Jugend okay?:
 ![alt text](image.png)
-- 
+
+## Verein
+- Gruppenfoto Vorstand fehlt (Vorstandsmitglieder)
+- Einzelfoto Meli + Sven fehlt (Vorstandsbild)
+
+### Mitgliedsantrag
+- 'Bei Fragen an Meli wenden' stimmt noch oder ist jemand anderes dafür zuständig?
+- Fehlt beim folgenden Block was?
+- ![alt text](image-1.png)
+
+## Sponsoring
+- Ansprechpartner ist noch René?
+
+## Kontakt
+- Bei allen eine Kontaktmöglichkeit hinterlegen?
+- ![alt text](image-2.png)
 
 # Offene To-Do's
-- Impressum Angaben prüfen
+
+## Impressum folgende Angaben prüfen:
+- 
+
+## DSGVO prüfen?
+- René fragen oder wer ist sonst Beauftragter?
 
 # Vorschläge
 - Neuigkeiten: Hauptsächlich maximal 3 Kacheln mit aktuellesten Dingen
