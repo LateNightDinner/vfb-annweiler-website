@@ -386,6 +386,15 @@ nav {
   margin-bottom: 4px;
 }
 
+.section-intro {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 640px;
+  margin-top: 12px;
+  margin-bottom: 28px;
+}
+
 /* ── NEWS SECTION ── */
 .section-news {
   padding: 72px 24px;
@@ -933,6 +942,12 @@ nav {
   align-items: center;
 }
 
+.profile-image-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
 .profile-image {
   position: relative;
   overflow: hidden;
@@ -948,7 +963,7 @@ nav {
   object-position: center 25%;
 }
 
-.profile-image span {
+.profile-image > span {
   display: block;
   padding: 10px 14px;
   color: var(--white);
@@ -1371,6 +1386,18 @@ nav {
   gap: 12px;
 }
 
+.info-grid--compact {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.info-grid--compact .info-item {
+  padding: 10px 12px;
+}
+
+.info-grid--compact .info-item .name {
+  font-size: 15px;
+}
+
 .info-item {
   background: var(--white);
   border: 1px solid #E0E5EF;
@@ -1387,11 +1414,62 @@ nav {
   margin-bottom: 4px;
 }
 
+.training-times {
+  background: #F4F6FB;
+  border: 1px solid #E0E5EF;
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+
+.section-profile--dark .training-times {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.16);
+}
+
+.section-profile--dark .training-times .role { color: rgba(255,255,255,0.55); }
+.section-profile--dark .training-times-row { color: var(--white); }
+.section-profile--dark .training-times-row .training-slot { color: var(--accent); }
+
+.training-times--tile {
+  grid-column: span 2;
+}
+
+.training-times .role {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.training-times-list {
+  display: grid;
+  gap: 8px;
+}
+
+.training-times-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  color: var(--blue-dark);
+}
+
+.training-times-row .training-day { font-size: 16px; }
+.training-times-row .training-slot { font-size: 15px; color: var(--blue-dark); font-weight: 700; white-space: nowrap; }
+
 .info-item .name {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 18px;
   font-weight: 700;
   color: var(--blue-dark);
+}
+
+.info-item--wide {
+  grid-column: 1 / -1;
 }
 
 /* ── DARTS SECTION ── */
