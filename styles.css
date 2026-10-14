@@ -963,6 +963,12 @@ nav {
   object-position: center 25%;
 }
 
+#herren-vorstellung .profile-image img {
+  max-height: none;
+  aspect-ratio: 4 / 3;
+  object-position: center 70%;
+}
+
 .profile-image > span {
   display: block;
   padding: 10px 14px;
