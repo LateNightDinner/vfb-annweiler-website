@@ -1,23 +1,25 @@
+# Beschlossen
+
+- Themen der Jugendabteilung immer direkt mit Dominic Gretoire klären
+- Bereiche die noch nicht sicher sind oder Dinge fehlen, werden unsichtbar gemacht und nicht gezeigt.
+
 # Fragen & Anliegen
 
 ## Mannschaften
 
-### Herren
-- Mannschaftsbild fehlt noch
-- Steven Göttgke fehlt Kontakmöglichkeit (Häkel mir schicken?)
-
-### Herren Ü32
-- Wer ist Ansprechpartner + Kontaktmöglichkeiten?
-- Mannschaftsbild fehlt
-- Kleiner Text dazu?
-
-### Herren Ü40
-- Wer ist Ansprechpartner + Kontaktmöglichkeiten?
+### Herren Ü32 & Ü40
+> Sichtbarkeit: <br>
+> Der Bereich wird momentan nicht angezeigt!
+- Kevin Frank
+- Kontaktmöglichkeiten?
 - Mannschaftsbild fehlt
 - Kleiner Text dazu?
 
 ### Altherren
-- Mannschaftsbild fehlt
+> Sichtbarkeit: <br>
+> Der Bereich wird momentan nicht angezeigt!
+- Mannschaftsbild fehlt noch
+- Hans-Jürgen Deschler nachfragen
 
 ## Steeldart
 - Felix fehlt Bild & Kontaktmöglichkeit
