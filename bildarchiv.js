@@ -19,17 +19,17 @@ const bildarchivBilder = [
   {
     datei: 'bildarchiv-1928-1929-suedpfalzgaumeister-der-bklasse.jpg',
     titel: '1928/1929: Südpfalzgaumeister der B-Klasse',
-    unterschrift: 'Stehend v.l.n.r. Karl Grasmück, Heiner Zuleg, Heiner Winter, Heiner Schnäbele, Johannes Jopp, Richard Brachat, Otto Veit, Bert Müller, Johannes Metz, Otto Metz, Adam Metz Sitzend v.l.n.r. Hermann Trautmann, Philipp Speyerer'
+    unterschrift: 'Stehend v.l.n.r. Karl Grasmück, Heiner Zuleg, Heiner Winter, Heiner Schnäbele, Johannes Jopp, Richard Brachat, Otto Veit, Bert Müller, Johannes Metz, Otto Metz, Adam Metz <br> Sitzend v.l.n.r. Hermann Trautmann, Philipp Speyerer'
   },
   {
     datei: 'bildarchiv-1937-1938-jugend.jpg',
     titel: '1937/1938: Jugend',
-    unterschrift: ''
+    unterschrift: 'Stehend v.l.n.r. Hans Döllinger, Albert Speyerer, Kurt Gabelmann, Kurt Hautz, Georg Konrad, Georg Künzl, Erich Köhler <br> Knieend v.l.n.r. Gottfried Steiner, Alfred Kellerhans, Helmut Göttel, Walter Bretz'
   },
   {
     datei: 'bildarchiv-1939-jugend.jpg',
     titel: '1939: Jugend',
-    unterschrift: ''
+    unterschrift: 'Stehend v.l.n.r. Georg Künzl, Georg Konrad, Otto Gotthold, Heiner Schnäbele, Walter Schüssler <br> Sitzend v.l.n.r. Erich Köhler, Helmut Göttel, Alfred Kellerhans, Hans Döllinger <br> Liegend v.l.n.r. Kurt Gabelmann, Albert Speyerer'
   },
   {
     datei: 'bildarchiv-1941-jugend.jpg',
@@ -131,7 +131,7 @@ const bildarchivBilder = [
         <div class="bildarchiv-figure-media"><img src="bilder/bildarchiv/${bild.datei}" alt="${bild.titel}" loading="lazy"></div>
         <figcaption>
           <div class="bildarchiv-titel">${bild.titel}</div>
-          <div class="bildarchiv-unterschrift">${bild.unterschrift || 'Personen noch zu ergänzen'}</div>
+          ${bild.unterschrift !== '' ? `<div class="bildarchiv-unterschrift">${bild.unterschrift}</div>` : ''}
         </figcaption>
       </figure>
     </div>
