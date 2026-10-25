@@ -1438,6 +1438,8 @@ nav {
   border-color: rgba(255,255,255,0.16);
 }
 
+.training-times > p { font-size: 13px; color: var(--muted); margin: 8px 0 0; }
+.section-profile--dark .training-times > p { color: rgba(255,255,255,0.55); }
 .section-profile--dark .training-times .role { color: rgba(255,255,255,0.55); }
 .section-profile--dark .training-times-row { color: var(--white); }
 .section-profile--dark .training-times-row .training-slot { color: var(--accent); }
@@ -2059,7 +2061,7 @@ a.sponsor-logo {
 }
 
 .kontakt-card::before {
-  content: 'Kontaktbild - später ergänzen';
+  content: 'Kontaktbild: später ergänzen';
   display: flex;
   align-items: center;
   justify-content: center;

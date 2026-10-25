@@ -62,7 +62,7 @@ const renderSpielPanel = (spiel, istVergangen, mitAnker = false) => {
   const heimteam = spiel.ort === 'Heim' ? spiel.verein : spiel.gegner;
   const gastteam = spiel.ort === 'Heim' ? spiel.gegner : spiel.verein;
   const anker = `spiel-${spiel.datum}-${spiel.mannschaft.toLowerCase().replaceAll(' ', '-')}`;
-  const datumZeit = spiel.uhrzeit ? `${formatNewsDatum(spiel.datum)} - ${spiel.uhrzeit}` : formatNewsDatum(spiel.datum);
+  const datumZeit = spiel.uhrzeit ? `${formatNewsDatum(spiel.datum)}, ${spiel.uhrzeit}` : formatNewsDatum(spiel.datum);
   const idAttribut = mitAnker ? ` id="${escapeNewsHtml(anker)}"` : '';
 
   if (istVergangen) {
