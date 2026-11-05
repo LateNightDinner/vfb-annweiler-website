@@ -804,10 +804,12 @@ nav {
 .bildarchiv-carousel-viewport {
   overflow: hidden;
   border-radius: var(--radius);
+  transition: height 0.35s ease;
 }
 
 .bildarchiv-carousel-track {
   display: flex;
+  align-items: flex-start;
   transition: transform 0.35s ease;
 }
 

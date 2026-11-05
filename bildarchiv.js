@@ -34,42 +34,42 @@ const bildarchivBilder = [
   {
     datei: 'bildarchiv-1941-jugend.jpg',
     titel: '1941: Jugend',
-    unterschrift: ''
+    unterschrift: 'Stehend v.l.n.r. Hans Döllinger, Robert Breiner, Erich Köhler, Ottmar Lamott, Albert Speyerer, Heiner Schnäbele <br> Knieend v.l.n.r. Alfred Kellerhans, Kurt Kopp, Georg Künzl <br> Liegend v.l.n.r. Helmut Göttel, Georg Konrad'
   },
   {
     datei: 'bildarchiv-1948-aktive.jpg',
     titel: '1948: Aktive Mannschaft',
-    unterschrift: ''
+    unterschrift: 'Stehend v.l.n.r. Richard Herbst, Georg Künzl, Josef Herbst, Albert Speyerer, Ottmar Lamott, Bruno Gorski, Adolf Borger, Hans Gillmann, Heinz Schäffler, Erwin Würtz, Johannes Jopp'
   },
   {
     datei: 'bildarchiv-1949-aktive-aufstiegsspiel-zur-aklasse.jpg',
     titel: '1949: Aktive, Aufstiegsspiel zur A-Klasse',
-    unterschrift: ''
+    unterschrift: 'Stehend v.l.n.r. Helmut Göttel, Adolf Borger, Ottmar Bolldorf, Hans Gillmann, Georg Künzl, Albert Speyerer, Wolfgang Neher, Edgar Göttel <br> Knieend v.l.n.r. Heinz Schäffler, Bruno Gorski, Josef Herbst'
   },
   {
     datei: 'bildarchiv-1951-aktive.jpg',
     titel: '1951: Aktive Mannschaft',
-    unterschrift: ''
+    unterschrift: 'Stehend v.l.n.r. Helmut Göttel, Adolf Borger, Richard Herbst, Albert Speyerer, Hans Albert, .... Tim, Georg Künzl, Heinz Schäffler, Ottmar Lamott, Erwin Würtz, Josef Grein'
   },
   {
     datei: 'bildarchiv-1953-1953-meister-der-bklasse.jpg',
     titel: '1953: Meister der B-Klasse',
-    unterschrift: ''
+    unterschrift: 'Stehend v.l.n.r. Georg Künzl, Hans Albert, Robert Mayer, Werner Rink, Rolf Krämer, Fritz Künzl <br> Knieend v.l.n.r. Manfred Klein, Erich Göltz, Bruno Gorski, Ottmar Lamott, Edgar Göttel'
   },
   {
     datei: 'bildarchiv-1955-1958-aktive.jpg',
     titel: '1955–1958: Aktive Mannschaft',
-    unterschrift: ''
+    unterschrift: 'Stehend v.l.n.r. Kurt Köder, Gerd Kuhn, Georg Goldfuß, Arno Kunz, Edmund Zimmerle, Helmut Völker, Werner Rink, Karl-Friedrich Bosch, Rudi Kuhn (Spielertrainer), Adolf Theobald, Ferenc Matusz'
   },
   {
     datei: 'bildarchiv-1955-aktive.jpg',
     titel: '1955: Aktive Mannschaft',
-    unterschrift: ''
+    unterschrift: 'Stehend v.l.n.r. Manfred Klein, Edgar Göttel, Rolf Krämer, Georg Künzl, Arno Kunz, Karl-Friedrich Bosch, Edmund Zimmerle, Georg Goldfuß, Trainer Rudi Kuhn <br> Knieend v.l.n.r. Ottmar Lamott, Bruno Gorski, Robert Mayer'
   },
   {
     datei: 'bildarchiv-1957-1958-meister-der-bklasse.jpg',
     titel: '1957/1958: Meister der B-Klasse',
-    unterschrift: ''
+    unterschrift: 'Stehend v.l.n.r. Karl-Friedrich Bosch, Werner Rink, Arno Kunz, Robert Mayer, Fritz Künzl, Gerd Kuhn, Edmund Zimmerle, Georg Goldfuß, Rudi Kuhn (Spielertrainer), Kurt Trautmann (Spielleiter) <br> Knieend v.l.n.r. Norbert Klein, Helmut Völker, Kurt Köder'
   },
   {
     datei: 'bildarchiv-1958-ah.jpg',
@@ -79,17 +79,17 @@ const bildarchivBilder = [
   {
     datei: 'bildarchiv-1960-ah-einweihung-trifelsstadion.jpg',
     titel: '1960: Altherren, Einweihung Trifelsstadion',
-    unterschrift: ''
+    unterschrift: 'Bild A (v.l.n.r.): VfB-Spielführer Oswald Ludwig, Schiedsrichter Johannes Jopp, Waldhof-Spielführer <br> Bild B (v.l.n.r.): Oswald Ludwig, Ottmar Bolldorf, Helmut Göttel, Fritz Künzl, Hans Bignotti, Erich Ludwig, ..... Johann, Georg Künzl, Adolf Borger, Hermann Kindler, Bruno Gorski'
   },
   {
     datei: 'bildarchiv-1981-meister-der-bklasse-und-pokalsieger.jpg',
     titel: '1981: Meister der B-Klasse und Pokalsieger',
-    unterschrift: ''
+    unterschrift: 'Stehend v.l.n.r. Wolfgang Feierabend, Malewski, Hanß, Hübl, Eugenio dos Santos, Straub, Böck, Siegfried Hoffmann, Gökhan, Rottmann, Walter Bitzer, Chomik, Peter, Franz Bitzer, Finger <br> Knieend v.l.n.r. Hautz, Wolf, Wittmann, Bohn, Heß, Zuleg <br> Nicht anwesend: Kuhl, Kopf, Fuchs, Franz, Würtz, Nikolaus, Axel Feierabend, Dentzer'
   },
   {
     datei: 'bildarchiv-1981-meister-der-bklasse-und-pokalsieger1.jpg',
     titel: '1981: Meister der B-Klasse und Pokalsieger',
-    unterschrift: ''
+    unterschrift: 'Stehend v.l.n.r. Wolfgang Feierabend, Malewski, Hanß, Hübl, Eugenio dos Santos, Straub, Böck, Siegfried Hoffmann, Gökhan, Rottmann, Walter Bitzer, Chomik, Peter, Franz Bitzer, Finger <br> Knieend v.l.n.r. Hautz, Wolf, Wittmann, Bohn, Heß, Zuleg <br> Nicht anwesend: Kuhl, Kopf, Fuchs, Franz, Würtz, Nikolaus, Axel Feierabend, Dentzer'
   },
   {
     datei: 'bildarchiv-1986-meister-der-bklasse-kreispokalsieger-bezirkspokalsieger.jpg',
@@ -104,7 +104,7 @@ const bildarchivBilder = [
   {
     datei: 'bildarchiv-1992-meister-der-aklasse.jpg',
     titel: '1992: Meister der A-Klasse',
-    unterschrift: ''
+    unterschrift: 'Eberhard Greiner, "Kando", Michael Stadel, Rainer Weisbrod, Frank Götten, Emil Straßner, Heinz Jeblick, Günther Götten <br> Knieend v.l.n.r. Ralf Münster, Patrick Seibel, Mustafa Seradni, Michael Woiznick, Kai-Uwe Lippler, Rolf Franz, Dirk Münster, Rolf Odebrecht'
   },
   {
     datei: 'bildarchiv-2010-2011-aufsteiger-nach-entscheidungsspiel-und-relegationsspielen.jpg',
@@ -114,7 +114,7 @@ const bildarchivBilder = [
   {
     datei: 'bildarchiv-abschiedsspiel-zuleg-bitzer-hautz.jpg',
     titel: 'Abschiedsspiel',
-    unterschrift: ''
+    unterschrift: 'Stehend v.l.n.r. Masseur Fick, Hans-Jürgen Zuleg, Manfred Hübl, Walter Bitzer, Ayhan Gökhan, Siegfried Hoffmann, Manfred Finger <br> Knieend v.l.n.r. Manfred Hautz, Rainer Fuchs, Rolf Franz, Jürgen Würtz, Ewald Wittmann, Klaus Rothmann, Bernd Wolf, Erdogan Gökhan <br> Stehend v.l.n.r. Michael Denzer, Thomas Chini, Manfred Finger, Bernd Gröber, Andreas Harde'
   },
 ];
 
@@ -145,14 +145,22 @@ const bildarchivBilder = [
   const dots = [...dotsContainer.children];
   let activeIndex = 0;
 
+  const updateViewportHeight = () => {
+    viewport.style.height = `${slides[activeIndex].offsetHeight}px`;
+  };
+
   const showSlide = (index) => {
     activeIndex = (index + slides.length) % slides.length;
     track.style.transform = `translateX(-${activeIndex * 100}%)`;
+    updateViewportHeight();
     dots.forEach((dot, dotIndex) => {
       dot.classList.toggle('is-active', dotIndex === activeIndex);
       dot.setAttribute('aria-selected', dotIndex === activeIndex);
     });
   };
+
+  showSlide(activeIndex);
+  window.addEventListener('resize', updateViewportHeight);
 
   document.querySelector('#bildarchiv-carousel-controls .carousel-button--prev').addEventListener('click', () => showSlide(activeIndex - 1));
   document.querySelector('#bildarchiv-carousel-controls .carousel-button--next').addEventListener('click', () => showSlide(activeIndex + 1));
