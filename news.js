@@ -80,8 +80,8 @@ const renderSpielPanel = (spiel, istVergangen, mitAnker = false) => {
           : `<span>${escapeNewsHtml(heimTore)}</span>`}
       </div>
       ${spiel.link
-        ? `<a class="spiel-result-bericht" href="${escapeNewsHtml(spiel.link)}" target="_blank" rel="noopener">Bericht auf fußball.de</a>`
-        : '<span class="spiel-result-bericht spiel-result-bericht--leer">Kein Bericht verfügbar</span>'}
+        ? `<a class="spiel-result-bericht" href="${escapeNewsHtml(spiel.link)}" target="_blank" rel="noopener">Spiel auf fußball.de</a>`
+        : ''}
     </article>
   `;
   }
