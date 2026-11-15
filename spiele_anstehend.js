@@ -30,7 +30,7 @@ const spieleAnstehend = [
     datum: '2026-09-16',
     uhrzeit: '19:00',
     verein: 'VfB Annweiler',
-    mannschaft: 'Damen',
+    mannschaft: 'Frauen',
     gegner: 'FV 1946 Hanhofen',
     ort: 'Heim',
     wettbewerb: 'Landesliga',
@@ -41,7 +41,7 @@ const spieleAnstehend = [
     datum: '2026-09-18',
     uhrzeit: '19:00',
     verein: 'VfB Annweiler',
-    mannschaft: 'Damen',
+    mannschaft: 'Frauen',
     gegner: 'SG Waldsee/Schifferstadt',
     ort: 'Heim',
     wettbewerb: 'Landesliga'
@@ -59,7 +59,7 @@ const spieleAnstehend = [
     datum: '2026-09-23',
     uhrzeit: '19:30',
     verein: 'VfB Annweiler',
-    mannschaft: 'Damen',
+    mannschaft: 'Frauen',
     gegner: 'TuS 1903/25 Knittelsheim',
     ort: 'Auswärts',
     wettbewerb: 'Landesliga'
@@ -68,7 +68,7 @@ const spieleAnstehend = [
     datum: '2026-09-26',
     uhrzeit: '15:00',
     verein: 'VfB Annweiler',
-    mannschaft: 'Damen',
+    mannschaft: 'Frauen',
     gegner: 'FC Viktoria Neupotz',
     ort: 'Heim',
     wettbewerb: 'Südwestdeutscher-Pokal'
@@ -86,7 +86,7 @@ const spieleAnstehend = [
     datum: '2026-10-02',
     uhrzeit: '19:00',
     verein: 'VfB Annweiler',
-    mannschaft: 'Damen',
+    mannschaft: 'Frauen',
     gegner: 'FC Lustadt',
     ort: 'Heim',
     wettbewerb: 'Landesliga'
@@ -104,7 +104,7 @@ const spieleAnstehend = [
     datum: '2026-10-10',
     uhrzeit: '17:00',
     verein: 'VfB Annweiler',
-    mannschaft: 'Damen',
+    mannschaft: 'Frauen',
     gegner: 'SG Heiligenstein/Harthausen/Weingarten',
     ort: 'Auswärts',
     wettbewerb: 'Landesliga'
@@ -122,7 +122,7 @@ const spieleAnstehend = [
     datum: '2026-10-16',
     uhrzeit: '19:00',
     verein: 'VfB Annweiler',
-    mannschaft: 'Damen',
+    mannschaft: 'Frauen',
     gegner: 'TSV Fortuna Billigheim-Ingenheim',
     ort: 'Heim',
     wettbewerb: 'Landesliga'
@@ -140,7 +140,7 @@ const spieleAnstehend = [
     datum: '2026-10-23',
     uhrzeit: '19:30',
     verein: 'VfB Annweiler',
-    mannschaft: 'Damen',
+    mannschaft: 'Frauen',
     gegner: '1. FFC Niederkirchen II',
     ort: 'Auswärts',
     wettbewerb: 'Landesliga'
@@ -167,7 +167,7 @@ const spieleAnstehend = [
     datum: '2026-11-07',
     uhrzeit: '17:00',
     verein: 'VfB Annweiler',
-    mannschaft: 'Damen',
+    mannschaft: 'Frauen',
     gegner: 'FC Phönix 21 Bellheim',
     ort: 'Heim',
     wettbewerb: 'Landesliga'
@@ -176,7 +176,7 @@ const spieleAnstehend = [
     datum: '2026-11-14',
     uhrzeit: '15:30',
     verein: 'VfB Annweiler',
-    mannschaft: 'Damen',
+    mannschaft: 'Frauen',
     gegner: 'FV Berghausen II',
     ort: 'Auswärts',
     wettbewerb: 'Landesliga'
@@ -320,7 +320,7 @@ const spieleAnstehend = [
     datum: '2026-11-16',
     uhrzeit: '19:00',
     verein: 'VfB Annweiler',
-    mannschaft: 'Damen',
+    mannschaft: 'Frauen',
     gegner: 'SG Heiligenstein/Harthausen/Weingarten',
     ort: 'Auswärts',
     wettbewerb: 'Landesliga',
@@ -339,7 +339,7 @@ const spieleAnstehend = [
     datum: '2026-11-20',
     uhrzeit: '19:00',
     verein: 'VfB Annweiler',
-    mannschaft: 'Damen',
+    mannschaft: 'Frauen',
     gegner: 'SG TSV Venningen/FSG Vorderpfalz-Gäu',
     ort: 'Heim',
     wettbewerb: 'Landesliga'
@@ -366,7 +366,7 @@ const spieleAnstehend = [
     datum: '2026-11-27',
     uhrzeit: '19:00',
     verein: 'VfB Annweiler',
-    mannschaft: 'Damen',
+    mannschaft: 'Frauen',
     gegner: 'SG Dammheim/Südwestgirls',
     ort: 'Heim',
     wettbewerb: 'Landesliga'
@@ -375,7 +375,7 @@ const spieleAnstehend = [
     datum: '2026-12-05',
     uhrzeit: '17:00',
     verein: 'VfB Annweiler',
-    mannschaft: 'Damen',
+    mannschaft: 'Frauen',
     gegner: 'FC Viktoria Neupotz',
     ort: 'Auswärts',
     wettbewerb: 'Landesliga'
@@ -394,3 +394,4 @@ spieleAnstehend.forEach((spiel) => {
     spiel.mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(suchbegriff)}`;
   }
 });
+

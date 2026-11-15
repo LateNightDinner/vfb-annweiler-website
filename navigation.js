@@ -32,7 +32,7 @@ if (navigation) {
             <button class="nav-dropdown-toggle" type="button" aria-label="Untermenü Mannschaften öffnen" aria-expanded="false"></button>
             <ul class="nav-submenu">
               <li><a href="${pages.mannschaften}#herren-vorstellung">Herren</a></li>
-              <li><a href="${pages.mannschaften}#damen-vorstellung">Damen</a></li>
+              <li><a href="${pages.mannschaften}#frauen-vorstellung">Frauen</a></li>
               <li><a href="${pages.mannschaften}#herren-ue32-vorstellung">Herren Ü32</a></li>
               <li><a href="${pages.mannschaften}#herren-ue40-vorstellung">Herren Ü40</a></li>
               <li><a href="${pages.mannschaften}#ah-vorstellung">Altherren</a></li>
