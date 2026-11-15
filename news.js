@@ -7,18 +7,11 @@ const redaktionelleNews = [
     link: 'steeldart.html'
   },
   {
-    datum: '2026-08-08',
-    kategorie: 'Verein',
-    titel: 'Aufräumaktion',
-    text: 'Freiwillige Helfer haben die Räumlichkeiten im Vereinsheim entrümpelt und neu geordnet. Die Vorher-Nachher-Bilder gibt es hier auf der Seite.',
-    link: 'aktuelles.html#aufraeumaktion'
-  },
-  {
     datum: '2026-09-20',
     kategorie: 'Newsletter',
     titel: 'Vereins-Newsletter',
-    text: 'Unser Newsletter erscheint einmal im Quartal mit Neuigkeiten aus dem Verein. Die aktuelle Ausgabesteht als PDF zum Download bereit.',
-    link: 'dokumente/vfb-newsletter-202605.pdf',
+    text: 'Unser Newsletter erscheint einmal im Quartal mit Neuigkeiten aus dem Verein. Die aktuelle     Ausgabe steht als PDF zum Download bereit.',
+        link: 'dokumente/vfb-newsletter-202610.pdf',
     download: true
   }
 ];
@@ -117,7 +110,13 @@ const renderSpielPanel = (spiel, istVergangen, mitAnker = false) => {
 
 const renderSpielCarousel = (containerId, spieldaten, istVergangen) => {
   const container = document.querySelector(containerId);
-  if (!container || !spieldaten.length) return;
+  if (!container) return;
+  if (!spieldaten.length) {
+    container.textContent = istVergangen
+      ? 'Keine vergangenen Spiele vorhanden.'
+      : 'Aktuell sind keine anstehenden Spiele eingetragen.';
+    return;
+  }
 
   const sortierteSpiele = [...spieldaten].sort((erstes, zweites) => {
     const sortierung = erstes.datum.localeCompare(zweites.datum);
