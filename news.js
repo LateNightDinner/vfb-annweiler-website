@@ -59,7 +59,8 @@ const renderSpielPanel = (spiel, istVergangen, mitAnker = false) => {
   const idAttribut = mitAnker ? ` id="${escapeNewsHtml(anker)}"` : '';
 
   if (istVergangen) {
-    const [heimTore, gastTore] = spiel.ergebnis.split(':');
+    const istTorergebnis = /^\d+:\d+$/.test(spiel.ergebnis);
+    const [heimTore, gastTore] = istTorergebnis ? spiel.ergebnis.split(':') : [spiel.ergebnis, ''];
 
     return `
     <article${idAttribut} class="spiel-card spiel-card--past">
@@ -74,9 +75,9 @@ const renderSpielPanel = (spiel, istVergangen, mitAnker = false) => {
         <span class="spiel-team">${mitUmbruchNachSlash(gastteam)}</span>
       </div>
       <div class="spiel-result-score">
-        <span>${escapeNewsHtml(heimTore)}</span>
-        <span>:</span>
-        <span>${escapeNewsHtml(gastTore)}</span>
+        ${istTorergebnis
+          ? `<span>${escapeNewsHtml(heimTore)}</span><span>:</span><span>${escapeNewsHtml(gastTore)}</span>`
+          : `<span>${escapeNewsHtml(heimTore)}</span>`}
       </div>
       ${spiel.link
         ? `<a class="spiel-result-bericht" href="${escapeNewsHtml(spiel.link)}" target="_blank" rel="noopener">Bericht auf fußball.de</a>`
