@@ -138,15 +138,13 @@ const renderSpielCarousel = (containerId, spieldaten, istVergangen) => {
     </div>
     <div class="spiele-carousel-controls">
       <button class="carousel-button carousel-button--prev" type="button" aria-label="Vorheriges Spiel"></button>
-      <div class="carousel-dots" role="tablist" aria-label="Spiel auswählen">
-        ${sortierteSpiele.map((spiel, index) => `<button class="carousel-dot${index === 0 ? ' is-active' : ''}" type="button" role="tab" aria-label="Spiel ${index + 1} von ${sortierteSpiele.length}" aria-selected="${index === 0}" data-slide="${index}"></button>`).join('')}
-      </div>
+      <span class="carousel-counter" aria-live="polite"></span>
       <button class="carousel-button carousel-button--next" type="button" aria-label="Nächstes Spiel"></button>
     </div>
   `;
 
   const track = container.querySelector('.spiele-carousel-track');
-  const dots = [...container.querySelectorAll('.carousel-dot')];
+  const counter = container.querySelector('.carousel-counter');
   let activeIndex = sichtbareKarten;
   let isAnimating = false;
 
@@ -156,11 +154,8 @@ const renderSpielCarousel = (containerId, spieldaten, istVergangen) => {
     track.style.transition = animate ? 'transform 0.35s ease' : 'none';
     activeIndex = index;
     track.style.transform = `translateX(-${activeIndex * (100 / sichtbareKarten)}%)`;
-    const dotIndex = (activeIndex - sichtbareKarten + sortierteSpiele.length) % sortierteSpiele.length;
-    dots.forEach((dot, index) => {
-      dot.classList.toggle('is-active', index === dotIndex);
-      dot.setAttribute('aria-selected', index === dotIndex);
-    });
+    const position = (activeIndex - sichtbareKarten + sortierteSpiele.length) % sortierteSpiele.length;
+    counter.textContent = `${position + 1} / ${sortierteSpiele.length}`;
   };
 
   track.addEventListener('transitionend', () => {
@@ -171,8 +166,7 @@ const renderSpielCarousel = (containerId, spieldaten, istVergangen) => {
 
   showSlide(activeIndex, false);
   container.querySelector('.carousel-button--prev').addEventListener('click', () => showSlide(activeIndex - 1));
-  container.querySelector('.carousel-button--next').addEventListener('click', () => showSlide(activeIndex + 1));
-  dots.forEach((dot) => dot.addEventListener('click', () => showSlide(Number(dot.dataset.slide) + sichtbareKarten)));
+  container.querySelector('.carousel-button--next').addEventListener('click', () => showSlide(activeIndex + 1));
 };
 
 const heute = new Date();

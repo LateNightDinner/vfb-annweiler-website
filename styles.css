@@ -567,6 +567,15 @@ nav {
 
 .carousel-dot.is-active { background: var(--accent); transform: scale(1.25); }
 
+.carousel-counter {
+  min-width: 64px;
+  color: var(--blue-dark);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
 /* ── TERMINE SECTION ── */
 .section-termine {
   padding: 72px 24px;

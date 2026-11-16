@@ -123,7 +123,7 @@ const bildarchivBilder = [
   if (!viewport) return;
 
   const track = viewport.querySelector('.bildarchiv-carousel-track');
-  const dotsContainer = document.querySelector('#bildarchiv-carousel-dots');
+  const counter = document.querySelector('#bildarchiv-carousel-counter');
 
   track.innerHTML = bildarchivBilder.map((bild) => `
     <div class="bildarchiv-carousel-slide">
@@ -137,12 +137,7 @@ const bildarchivBilder = [
     </div>
   `).join('');
 
-  dotsContainer.innerHTML = bildarchivBilder.map((bild, index) => `
-    <button class="carousel-dot${index === 0 ? ' is-active' : ''}" type="button" role="tab" aria-label="Bild ${index + 1} von ${bildarchivBilder.length}" aria-selected="${index === 0}" data-slide="${index}"></button>
-  `).join('');
-
   const slides = [...track.children];
-  const dots = [...dotsContainer.children];
   let activeIndex = 0;
 
   const updateViewportHeight = () => {
@@ -153,16 +148,12 @@ const bildarchivBilder = [
     activeIndex = (index + slides.length) % slides.length;
     track.style.transform = `translateX(-${activeIndex * 100}%)`;
     updateViewportHeight();
-    dots.forEach((dot, dotIndex) => {
-      dot.classList.toggle('is-active', dotIndex === activeIndex);
-      dot.setAttribute('aria-selected', dotIndex === activeIndex);
-    });
+    counter.textContent = `${activeIndex + 1} / ${slides.length}`;
   };
 
   showSlide(activeIndex);
   window.addEventListener('resize', updateViewportHeight);
 
   document.querySelector('#bildarchiv-carousel-controls .carousel-button--prev').addEventListener('click', () => showSlide(activeIndex - 1));
-  document.querySelector('#bildarchiv-carousel-controls .carousel-button--next').addEventListener('click', () => showSlide(activeIndex + 1));
-  dots.forEach((dot) => dot.addEventListener('click', () => showSlide(Number(dot.dataset.slide))));
+  document.querySelector('#bildarchiv-carousel-controls .carousel-button--next').addEventListener('click', () => showSlide(activeIndex + 1));
 })();
