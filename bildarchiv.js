@@ -153,10 +153,7 @@ const bildarchivBilder = [
     activeIndex = (index + slides.length) % slides.length;
     track.style.transform = `translateX(-${activeIndex * 100}%)`;
     updateViewportHeight();
-    dots.forEach((dot, dotIndex) => {
-      dot.classList.toggle('is-active', dotIndex === activeIndex);
-      dot.setAttribute('aria-selected', dotIndex === activeIndex);
-    });
+    updateCarouselDots(dots, activeIndex);
   };
 
   showSlide(activeIndex);

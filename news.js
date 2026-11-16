@@ -157,10 +157,7 @@ const renderSpielCarousel = (containerId, spieldaten, istVergangen) => {
     activeIndex = index;
     track.style.transform = `translateX(-${activeIndex * (100 / sichtbareKarten)}%)`;
     const dotIndex = (activeIndex - sichtbareKarten + sortierteSpiele.length) % sortierteSpiele.length;
-    dots.forEach((dot, index) => {
-      dot.classList.toggle('is-active', index === dotIndex);
-      dot.setAttribute('aria-selected', index === dotIndex);
-    });
+    updateCarouselDots(dots, dotIndex);
   };
 
   track.addEventListener('transitionend', () => {

@@ -565,6 +565,8 @@ nav {
   cursor: pointer;
 }
 
+.carousel-dot[hidden] { display: none; }
+.carousel-dot.is-small { transform: scale(0.65); }
 .carousel-dot.is-active { background: var(--accent); transform: scale(1.25); }
 
 /* ── TERMINE SECTION ── */
