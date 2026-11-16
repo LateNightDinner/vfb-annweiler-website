@@ -1941,6 +1941,8 @@ a.sponsor-logo {
   gap: 20px;
 }
 
+.kontakt-grid--abteilungen { margin-top: 48px; }
+
 .kontakt-card {
   position: relative;
   overflow: hidden;
