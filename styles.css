@@ -1950,19 +1950,17 @@ a.sponsor-logo {
   padding: 22px;
 }
 
-.kontakt-card::before {
-  content: 'Kontaktbild: später ergänzen';
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 120px;
-  margin: -22px -22px 20px;
-  background: linear-gradient(135deg, var(--blue-section), var(--accent));
-  color: var(--white);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
+.kontakt-card img {
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 40%;
 }
+
+.kontakt-card a { color: var(--blue); }
 
 .kontakt-card .role {
   font-size: 11px;
