@@ -565,9 +565,16 @@ nav {
   cursor: pointer;
 }
 
-.carousel-dot[hidden] { display: none; }
-.carousel-dot.is-small { transform: scale(0.65); }
 .carousel-dot.is-active { background: var(--accent); transform: scale(1.25); }
+
+.carousel-counter {
+  min-width: 64px;
+  color: var(--blue-dark);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
 
 /* ── TERMINE SECTION ── */
 .section-termine {
