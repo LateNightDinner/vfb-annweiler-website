@@ -10,3 +10,6 @@ Desktop.ini
 *.tmp
 *.temp
 *.bak
+01_release-ordner-einrichten.bat
+02_release-aktualisieren.bat
+03_upload-allinkl.bat
